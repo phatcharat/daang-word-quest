@@ -1,0 +1,44 @@
+.bottom-nav {
+    position: fixed;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: calc(100% - 32px);
+    max-width: 420px;
+    height: 62px;
+
+    background: #d9d9d9;
+
+    border-radius: 999px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+.nav-item {
+    border: none;
+    background: transparent;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.nav-item i {
+    font-size: 28px;
+    color: #000;
+    transition: .2s;
+}
+
+.nav-item.active i {
+    color: #066FD1;
+}

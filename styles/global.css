@@ -1,0 +1,62 @@
+/* ===== styles/global.css =====
+   ตัวแปรกลาง + reset ที่ทุก component เรียกใช้ร่วมกัน
+   วิธีใช้: import ไฟล์นี้ใน index.html เป็นไฟล์แรกก่อน component css อื่น ๆ
+*/
+
+:root {
+  /* Palette */
+  --navy:    #066FD1;
+
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  /* Shadow */
+  --shadow-card: 0 4px 20px rgba(26,39,68,0.10);
+  --shadow-btn:  0 2px 8px rgba(26,39,68,0.18);
+
+  /* Layout */
+  --max-width: 480px;
+  --bottom-nav-height: 64px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; }
+body {
+  font-family: 'Sarabun', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button, input { font-family: 'Sarabun', sans-serif; }
+
+.hidden { display: none !important; }
+
+/* Toast ใช้ร่วมกันทุกหน้า */
+.toast {
+  position: fixed;
+  bottom: calc(var(--bottom-nav-height) + 16px);
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: var(--navy);
+  color: var(--white);
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  white-space: nowrap;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

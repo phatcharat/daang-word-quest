@@ -1,0 +1,44 @@
+{
+  "words": [
+    {
+      "id": 1,
+      "thai": "ขวดน้ำ",
+      "daang": "กาเปา",
+      "ipa": "kapAw",
+      "emoji": "🍶",
+      "category": "items"
+    },
+    {
+      "id": 2,
+      "thai": "หมอน",
+      "daang": "หมอน",
+      "ipa": "hmoan",
+      "emoji": "🍶",
+      "category": "items"
+    },
+    {
+      "id": 8,
+      "thai": "นก",
+      "daang": "นก",
+      "ipa": "nok",
+      "emoji": "🐦",
+      "category": "animal"
+    },
+    {
+      "id": 3,
+      "thai": "มือ",
+      "daang": "มือ",
+      "ipa": "mɯ",
+      "emoji": "🖐️",
+      "category": "body"
+    },
+    {
+      "id": 4,
+      "thai": "กล้วย",
+      "daang": "ไกล",
+      "ipa": "klay",
+      "emoji": "🍌",
+      "category": "fruit"
+    }
+  ]
+}

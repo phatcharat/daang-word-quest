@@ -1,0 +1,182 @@
+:root {
+    --primary-color: #066FD1;
+    --bg-color: #FFFFFF;
+    --card-bg: #ffffff;
+    --border-color: #dcdcdc;
+}
+
+/* ===== Main Layout ===== */
+
+.home-page {
+    width: 100%;
+    min-height: 100vh;
+
+    background: #fff;
+
+    padding: 24px;
+    padding-bottom: 100px;
+
+    box-sizing: border-box;
+}
+/* ===== Header ===== */
+
+.home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 14px;
+    margin-bottom: 24px;
+
+    border-bottom: 2px solid #e5e5e5;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-wrapper {
+    width: 52px;
+    height: 52px;
+
+    background: var(--primary-color);
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+.logo-wrapper img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+}
+
+.logo-section h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* ===== User Stats ===== */
+
+.user-stats {
+    display: flex;
+    gap: 8px;
+}
+
+.stat {
+    padding: 8px 12px;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.fire {
+    background: #ffe4b3;
+}
+
+.xp {
+    background: #ddd6ff;
+    color: #5d3fd3;
+}
+
+/* ===== Welcome ===== */
+
+.welcome-section {
+    margin-bottom: 30px;
+}
+
+.welcome-section h1 {
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.welcome-section p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* ===== Menu Cards ===== */
+
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 18px;
+
+    border: 1px solid #d7d7d7;
+    border-radius: 12px;
+
+    background: white;
+}
+
+.menu-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,.1);
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+
+    background: #066FD1;
+
+    border-radius: 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+.icon-box i {
+    color: white;
+    font-size: 28px;
+}
+
+.menu-content h3 {
+    margin: 0 0 5px;
+    font-size: 22px;
+}
+
+.menu-content p {
+    margin: 0;
+    font-size: 15px;
+    color: #555;
+}
+
+/* ===== Tablet ===== */
+
+@media (max-width: 768px) {
+
+    .home-page {
+        padding: 18px;
+    }
+
+    .welcome-section h1 {
+        font-size: 30px;
+    }
+
+    .menu-content h3 {
+        font-size: 20px;
+    }
+}
