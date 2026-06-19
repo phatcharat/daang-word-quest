@@ -1,0 +1,156 @@
+.spelling-page{
+    min-height:100vh;
+    background:#F5F5F5;
+    padding-bottom:110px;
+}
+
+/* HEADER */
+
+.spelling-header{
+    background:#FFFFFF;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 24px;
+
+    border-bottom:1px solid #EAEAEA;
+}
+
+.page-title{
+    display:flex;
+    align-items:center;
+    gap:2px;
+}
+
+.page-title h1{
+    font-size:20px;
+    font-weight:700;
+}
+
+.title-icon{
+    width:48px;
+    height:48px;
+
+    border-radius:14px;
+
+    background:#066FD1;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+}
+
+/* STATS */
+
+.user-stats{
+    display:flex;
+    gap:8px;
+}
+
+.stat{
+    padding:8px 12px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.fire{
+    background:#FFE4B3;
+}
+
+.xp{
+    background:#DDD6FF;
+}
+
+/* CATEGORY */
+
+.category-list{
+    padding:24px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.category-card{
+    background:#FFFFFF;
+
+    border:none;
+    border-radius:20px;
+
+    padding:22px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    text-align:left;
+
+    cursor:pointer;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.05);
+}
+
+.category-content h3{
+    margin:0 0 8px;
+    font-size:22px;
+    font-weight:700;
+}
+
+.category-content p{
+    margin:0;
+    color:#666;
+}
+
+.category-icon{
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+    font-size:28px;
+}
+
+.orange{
+    background:#F5A623;
+}
+
+.blue{
+    background:#4A90E2;
+}
+
+.green{
+    background:#1ABC75;
+}
+
+.cyan{
+    background:#22B8CF;
+}
+
+@media(max-width:768px){
+
+    .spelling-header{
+        padding:16px;
+    }
+
+    .page-title h1{
+        font-size:22px;
+    }
+
+    .category-content h3{
+        font-size:18px;
+    }
+
+    .category-icon{
+        width:60px;
+        height:60px;
+    }
+}

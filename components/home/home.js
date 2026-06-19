@@ -13,16 +13,13 @@ function initHomeScreen() {
     const listenBtn = document.getElementById("listen-btn");
 
     quizBtn?.addEventListener("click", () => {
-        console.log("Quiz");
+        navigateTo("game");
     });
 
     spellBtn?.addEventListener("click", () => {
-        console.log("Spell");
+        navigateTo("spelling");
     });
 
-    listenBtn?.addEventListener("click", () => {
-        console.log("Listen");
-    });
 }
 
 window.initHomeScreen = initHomeScreen;

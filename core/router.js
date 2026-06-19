@@ -20,6 +20,14 @@ const ROUTES = {
     js:   ["components/game/game.js"],
     init: "initGameScreen",
   },
+  spelling: {
+    html: "components/spelling/spelling.html",
+    css: [
+        "components/spelling/spelling.css",
+        "components/home/bottom-nav.css"],
+    js: ["components/spelling/spelling.js"],
+    init: "initSpellingScreen",
+},
   result: {
     html: "components/result/result.html",
     css:  ["components/result/result.css"],
