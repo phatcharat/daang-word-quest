@@ -6,26 +6,11 @@
 }
 
 /* ===== Main Layout ===== */
-
-.home-page{
-    min-height:100vh;
-    background:var(--background);
-
-    padding:0;
-    padding-bottom:120px;
-}
-/* ===== Header ===== */
-
-.home-header{
-    background:#FFFFFF;
-
-    padding:20px 24px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    border-bottom:1px solid #EAEAEA;
+.home-header {
+    padding-top: calc(var(--safe-top) + 20px);
+    padding-right: 24px;
+    padding-bottom: 20px;
+    padding-left: 24px;
 }
 
 .logo-section {
@@ -34,17 +19,19 @@
     gap: 12px;
 }
 
-.logo-wrapper{
-    width:52px;
-    height:52px;
+.logo-wrapper {
+    width: 52px;
+    height: 52px;
 
-    background:none;
+    background: #066FD1;
 
-    border-radius:0;
+    border-radius: 50%;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink: 0;
 }
 
 .logo-wrapper img {

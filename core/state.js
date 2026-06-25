@@ -22,14 +22,21 @@ window.appState = {
   session: {
     questions: [],
     current: 0,
+
+    lessonId: 1,
+    category: null,
+
     score: 0,
-    streakInRound: 0,    // streak ตอบถูกต่อเนื่อง "ในรอบเกม" คนละตัวกับ streak รายวัน
-    maxStreakInRound: 0,
+    xpEarned: 0,
+
     correct: 0,
     wrong: 0,
+
+    hearts: 5,
+
     missed: [],
-    answered: false,
-    quizSubMode: null,
+
+    answered: false
   },
 };
 
