@@ -5,7 +5,7 @@
       "thai": "ขวด",
       "daang": "กาเปา",
       "ipa": "ka-pAw",
-      "emoji": "assets/icons/bottle.svg",
+      "emoji": "assets/icons/bottle.jpg",
       "category": "items"
     },
     {
@@ -13,7 +13,7 @@
       "thai": "หมอน",
       "daang": "หมอน",
       "ipa": "hmoan",
-      "emoji": "assets/icons/pillow.svg",
+      "emoji": "assets/icons/pillows.jpg",
       "category": "items"
     },
     {
@@ -21,7 +21,7 @@
       "thai": "จาน",
       "daang": "พาน",
       "ipa": "hpan",
-      "emoji": "🍽️",
+      "emoji": "assets/icons/plate.jpg",
       "category": "items"
     },
     {
@@ -29,7 +29,7 @@
       "thai": "มือ",
       "daang": "แด",
       "ipa": "dae",
-      "emoji": "🖐️",
+      "emoji": "assets/icons/hand.svg",
       "category": "body"
     },
     {
@@ -37,7 +37,7 @@
       "thai": "กล้วย",
       "daang": "ไกล",
       "ipa": "klay",
-      "emoji": "🍌",
+      "emoji": "assets/icons/banana.jpg",
       "category": "fruit"
     },
     {
@@ -53,7 +53,7 @@
       "thai": "เท้า",
       "daang": "เปลา",
       "ipa": "plAw",
-      "emoji": "assets/icons/foot.svg",
+      "emoji": "assets/icons/foot.jpg",
       "category": "body"
     },
     {
@@ -61,7 +61,7 @@
       "thai": "นก",
       "daang": "มาซีม",
       "ipa": "mashim",
-      "emoji": "🐦",
+      "emoji": "assets/icons/bird.jpg",
       "category": "animal"
     },
     {
@@ -69,7 +69,7 @@
       "thai": "กบ",
       "daang": "มาโระ",
       "ipa": "marok",
-      "emoji": "🐸",
+      "emoji": "assets/icons/frog.jpg",
       "category": "animal"
     },
     {
@@ -85,7 +85,7 @@
       "thai": "ปลา",
       "daang": "มาฆา",
       "ipa": "maga",
-      "emoji": "🐟",
+      "emoji": "assets/icons/fish.jpg",
       "category": "animal"
     },
     {
@@ -101,7 +101,7 @@
       "thai": "มด",
       "daang": "มาปรูณ",
       "ipa": "mapruyn",
-      "emoji": "🐜",
+      "emoji": "assets/icons/ant.jpg",
       "category": "animal"
     },
     {
@@ -109,7 +109,7 @@
       "thai": "แมลงวัน",
       "daang": "มารอย",
       "ipa": "maraoy",
-      "emoji": "🪰",
+      "emoji": "assets/icons/fly.jpg",
       "category": "animal"
     },
     {
@@ -117,7 +117,7 @@
       "thai": "นิ้วโป้ง",
       "daang": "กานู มา",
       "ipa": "ka-nu ma",
-      "emoji": "👍",
+      "emoji": "assets/icons/thumb.svg",
       "category": "body"
     },
     {
@@ -165,23 +165,23 @@
       "thai": "กระดาษ",
       "daang": "เฌ",
       "ipa": "ze",
-      "emoji": "📄",
+      "emoji": "assets/icons/paper.jpg",
       "category": "items"
     },
     {
       "id": 22,
-      "thai": "กระดาษ",
-      "daang": "เฌ",
-      "ipa": "ze",
-      "emoji": "📄",
-      "category": "items"
+      "thai": "กระต่าย",
+      "daang": "มายูน",
+      "ipa": "ma-yun",
+      "emoji": "assets/icons/rabbit.jpg",
+      "category": "animal"
     },
     {
       "id": 23,
       "thai": "ผ้าโพกหัว",
       "daang": "กามัยะ",
       "ipa": "ka-mayK",
-      "emoji": "-----------------------",
+      "emoji": "-----------------",
       "category": "items"
     },
     {
@@ -189,7 +189,7 @@
       "thai": "ตา",
       "daang": "งาย",
       "ipa": "ngay",
-      "emoji": "👁️",
+      "emoji": "assets/icons/eyes.jpg",
       "category": "body"
     },
     {
@@ -197,15 +197,15 @@
       "thai": "เงิน",
       "daang": "รึอน",
       "ipa": "ruean",
-      "emoji": "💵",
+      "emoji": "assets/icons/money.jpg",
       "category": "items"
     },
     {
       "id": 26,
       "thai": "เสือ",
-      "daang": "มาดีวาย",
-      "ipa": "ma-di-way",
-      "emoji": "🐅",
+      "daang": "มาดาวาย",
+      "ipa": "ma-da-way",
+      "emoji": "assets/icons/tiger.jpg",
       "category": "animal"
     },
     {
@@ -213,7 +213,7 @@
       "thai": "ถั่ว",
       "daang": "เบล โลม",
       "ipa": "bqle lom",
-      "emoji": "🫘",
+      "emoji": "assets/icons/bean.jpg",
       "category": "fruit"
     },
     {
@@ -237,7 +237,7 @@
       "thai": "กระทะ",
       "daang": "มัง คาง",
       "ipa": "mAng-hkang",
-      "emoji": "🍳",
+      "emoji": "assets/icons/pan.jpg",
       "category": "items"
     },
     {
@@ -245,7 +245,7 @@
       "thai": "ลิง",
       "daang": "มาฟา",
       "ipa": "ma-hwa",
-      "emoji": "🐒",
+      "emoji": "assets/icons/monkey.jpg",
       "category": "animal"
     },
     {
@@ -261,7 +261,7 @@
       "thai": "หมี",
       "daang": "มาเฆรห",
       "ipa": "ma-grex",
-      "emoji": "🐻",
+      "emoji": "assets/icons/bear.jpg",
       "category": "animal"
     },
     {
@@ -277,7 +277,7 @@
       "thai": "ไหล่",
       "daang": "ยัะ",
       "ipa": "yAQ",
-      "emoji": "assets/icons/shoulder.png",
+      "emoji": "assets/icons/shoulder.jpg",
       "category": "body"
     },
     {
@@ -327,6 +327,566 @@
       "ipa": "ka-byaw",
       "emoji": "assets/icons/big_bag.png",
       "category": "items"
+    },
+    {
+      "id": 42,
+      "thai": "แก้วน้ำ",
+      "daang": "ก็อก",
+      "ipa": "koak",
+      "emoji": "assets/icons/plastic_cup.png",
+      "category": "items"
+    },
+    {
+      "id": 43,
+      "thai": "ตะกร้าแบกฝืน",
+      "daang": "กรึก",
+      "ipa": "kruek",
+      "emoji": "assets/icons/basket_0.jpg",
+      "category": "items"
+    },
+    {
+      "id": 44,
+      "thai": "กำไล",
+      "daang": "กันแด",
+      "ipa": "gAn dea",
+      "emoji": "assets/icons/bracelet.jpg",
+      "category": "items"
+    },
+    {
+      "id": 45,
+      "thai": "เสื่อ",
+      "daang": "อึณเบว",
+      "ipa": "qimK-bew",
+      "emoji": "assets/icons/mat_th.jpg",
+      "category": "items"
+    },
+    {
+      "id": 45,
+      "thai": "ค้อน",
+      "daang": "มึย",
+      "ipa": "muey",
+      "emoji": "assets/icons/sticky.svg",
+      "category": "items"
+    },
+    {
+      "id": 46,
+      "thai": "มีด",
+      "daang": "ปัวะ",
+      "ipa": "puaK",
+      "emoji": "assets/icons/knife.svg",
+      "category": "items"
+    },
+    {
+      "id": 47,
+      "thai": "ไม้กวาด",
+      "daang": "อึณบีห",
+      "ipa": "qimK-bix",
+      "emoji": "assets/icons/wroom.jpg",
+      "category": "items"
+    },
+    {
+      "id": 48,
+      "thai": "กางเกง",
+      "daang": "ซีลา",
+      "ipa": "si-la",
+      "emoji": "assets/icons/pants.svg",
+      "category": "items"
+    },
+    {
+      "id": 49,
+      "thai": "ลิ้น",
+      "daang": "ซีดัะ",
+      "ipa": "si-dAQ",
+      "emoji": "assets/icons/tongue.jpg",
+      "category": "body"
+    },
+    {
+      "id": 50,
+      "thai": "เสื้อ",
+      "daang": "ซีโตว",
+      "ipa": "si-tow",
+      "emoji": "assets/icons/shirt.jpg",
+      "category": "items"
+    },
+    {
+      "id": 51,
+      "thai": "ผีเสื้อ",
+      "daang": "มากาโตบ",
+      "ipa": "ma-ka-top",
+      "emoji": "assets/icons/butterfly.svg",
+      "category": "animal"
+    },
+    {
+      "id": 52,
+      "thai": "มะเขือเทศ",
+      "daang": "มากาโซม",
+      "ipa": "ma-ka-som",
+      "emoji": "assets/icons/tomato.jpg",
+      "category": "fruit"
+    },
+    {
+      "id": 53,
+      "thai": "ค้างคาว",
+      "daang": "มากาลัะ",
+      "ipa": "ma-ka-lAQ",
+      "emoji": "assets/icons/bat.jpg",
+      "category": "animal"
+    },
+    {
+      "id": 54,
+      "thai": "ยุง",
+      "daang": "มากามูด",
+      "ipa": "ma-ka-mut",
+      "emoji": "assets/icons/mosquito.jpg",
+      "category": "animal"
+    },
+    {
+      "id": 55,
+      "thai": "อีกา",
+      "daang": "มากาอาะ",
+      "ipa": "muey",
+      "emoji": "assets/icons/crow_animal.svg",
+      "category": "animal"
+    },
+    {
+      "id": 56,
+      "thai": "มะเขือ",
+      "daang": "มาคึร",
+      "ipa": "ma-hkuew",
+      "emoji": "assets/icons/eggplant.svg",
+      "category": "fruit"
+    },
+    {
+      "id": 57,
+      "thai": "ควาย",
+      "daang": "มาฆรัะ",
+      "ipa": "ma-grAQ",
+      "emoji": "assets/icons/buffalo.jpg",
+      "category": "animal"
+    },
+    {
+      "id": 58,
+      "thai": "เหยี่ยว",
+      "daang": "มาฆลาง",
+      "ipa": "ma-gqlang",
+      "emoji": "assets/icons/hawk.png",
+      "category": "animal"
+    },
+    {
+      "id": 59,
+      "thai": "หมา",
+      "daang": "โซว",
+      "ipa": "sow",
+      "emoji": "assets/icons/dog.png",
+      "category": "animal"
+    },
+    {
+      "id": 60,
+      "thai": "งู",
+      "daang": "ฮัณ",
+      "ipa": "hAnk",
+      "emoji": "assets/icons/sneck.jpg",
+      "category": "animal"
+    },
+    {
+      "id": 61,
+      "thai": "นิ้วก้อย",
+      "daang": "กานู อาแวด",
+      "ipa": "ka-nu qa-waed",
+      "emoji": "assets/icons/little_finger.png",
+      "category": "body"
+    },
+    {
+      "id": 62,
+      "thai": "เสื้อผ้า",
+      "daang": "ครึง",
+      "ipa": "hkrueng",
+      "emoji": "assets/icons/clothes.svg",
+      "category": "items"
+    },
+    {
+      "id": 63,
+      "thai": "ผ้าซิ่น",
+      "daang": "ฆลาง",
+      "ipa": "gqlang",
+      "emoji": "--",
+      "category": "items"
+    },
+    {
+      "id": 64,
+      "thai": "เสื้อดาราอางผู้หญิง",
+      "daang": "ซีโลบ",
+      "ipa": "si-lop",
+      "emoji": "--",
+      "category": "items"
+    },
+    {
+      "id": 65,
+      "thai": "ด้าย",
+      "daang": "เซณ",
+      "ipa": "sen",
+      "emoji": "assets/icons/thread.svg",
+      "category": "items"
+    },
+    {
+      "id": 66,
+      "thai": "หัวหอม",
+      "daang": "มาโปว",
+      "ipa": "ma-pow",
+      "emoji": "assets/icons/onion.jpg",
+      "category": "fruit"
+    },
+    {
+      "id": 67,
+      "thai": "หม้อนึ่ง",
+      "daang": "อึณโฮ็ง",
+      "ipa": "qinK-hongK",
+      "emoji": "assets/icons/pot_th.jpg",
+      "category": "items"
+    },
+    {
+      "id": 68,
+      "thai": "เชือก",
+      "daang": "วัน",
+      "ipa": "wAn",
+      "emoji": "assets/icons/robe.jpg",
+      "category": "items"
+    },
+    {
+      "id": 69,
+      "thai": "ปู",
+      "daang": "มาดีเฆรียห",
+      "ipa": "ma-di-griax",
+      "emoji": "assets/icons/crab.svg",
+      "category": "animal"
+    },
+    {
+      "id": 70,
+      "thai": "เมล็ดทานตะวัน",
+      "daang": "เบล มังฌึอม",
+      "ipa": "bqle mAng-zueam",
+      "emoji": "assets/icons/seed_sunflower.jpg",
+      "category": "fruit"
+    },
+    {
+      "id": 71,
+      "thai": "ผ้าห่ม",
+      "daang": "ฮึบ",
+      "ipa": "huep",
+      "emoji": "assets/icons/blanket.jpg",
+      "category": "items"
+    },
+    {
+      "id": 72,
+      "thai": "วัว",
+      "daang": "มัก",
+      "ipa": "mAk",
+      "emoji": "assets/icons/cow.jpg",
+      "category": "animal"
+    },
+    {
+      "id": 73,
+      "thai": "แมลงสาบ",
+      "daang": "มาพยาบ",
+      "ipa": "ma-hpyap",
+      "emoji": "assets/icons/cockroach.jpg",
+      "category": "animal"
+    },
+    {
+      "id": 74,
+      "thai": "ผึ้ง",
+      "daang": "มาเพียน",
+      "ipa": "ma-hpian",
+      "emoji": "assets/icons/bee.jpg",
+      "category": "animal"
+    },
+    {
+      "id": 75,
+      "thai": "ไก่",
+      "daang": "เอียน",
+      "ipa": "qian",
+      "emoji": "assets/icons/chicken.jpg",
+      "category": "animal"
+    },
+    {
+      "id": 76,
+      "thai": "แก้ม",
+      "daang": "กาลา",
+      "ipa": "ka-la",
+      "emoji": "assets/icons/cheeks.jpg",
+      "category": "body"
+    },
+    {
+      "id": 77,
+      "thai": "หม้อนึ่ง",
+      "daang": "อึณโฮ็ง",
+      "ipa": "qinK-hongK",
+      "emoji": "assets/icons/pot_th.jpg",
+      "category": "items"
+    },
+    {
+      "id": 78,
+      "thai": "เชือก",
+      "daang": "วัน",
+      "ipa": "wAn",
+      "emoji": "assets/icons/robe.jpg",
+      "category": "items"
+    },
+    {
+      "id": 79,
+      "thai": "ปู",
+      "daang": "มาดีเฆรียห",
+      "ipa": "ma-di-griax",
+      "emoji": "assets/icons/crab.svg",
+      "category": "animal"
+    },
+    {
+      "id": 80,
+      "thai": "เมล็ดทานตะวัน",
+      "daang": "เบล มังฌึอม",
+      "ipa": "bqle mAng-zueam",
+      "emoji": "assets/icons/seed_sunflower.jpg",
+      "category": "fruit"
+    },
+    {
+      "id": 81,
+      "thai": "หมาก",
+      "daang": "เบล มามู",
+      "ipa": "bqle ma-mu",
+      "emoji": "assets/icons/betel_nat.jpg",
+      "category": "fruit"
+    },
+    {
+      "id": 82,
+      "thai": "นิ้วชี้",
+      "daang": "กานู ปูต",
+      "ipa": "ka-nu putk",
+      "emoji": "assets/icons/index_finger.png",
+      "category": "body"
+    },
+    {
+      "id": 83,
+      "thai": "นิ้วกลาง",
+      "daang": "กานู กาแต",
+      "ipa": "ka-nu ka-tae",
+      "emoji": "assets/icons/seed_sunflower.jpg",
+      "category": "body"
+    },
+    {
+      "id": 84,
+      "thai": "นิ้วนาง",
+      "daang": "กานู ดาม",
+      "ipa": "ka-nu dam",
+      "emoji": "assets/icons/ring_finger.png",
+      "category": "body"
+    },
+    {
+      "id": 85,
+      "thai": "เตียง",
+      "daang": "กาโช็ง อีด",
+      "ipa": "ka-hcoangk-qit",
+      "emoji": "assets/icons/bedstead.jpg",
+      "category": "items"
+    },
+    {
+      "id": 86,
+      "thai": "เอว",
+      "daang": "ณอย",
+      "ipa": "nyoay",
+      "emoji": "assets/icons/waist.jpg",
+      "category": "body"
+    },
+    {
+      "id": 87,
+      "thai": "จมูก",
+      "daang": "ฆู มูห",
+      "ipa": "",
+      "emoji": "assets/icons/nose.jpg",
+      "category": "body"
+    },
+    {
+      "id": 88,
+      "thai": "พริก",
+      "daang": "พรีต",
+      "ipa": "hpruet",
+      "emoji": "assets/icons/chillies.jpg",
+      "category": "fruit"
+    },
+    {
+      "id": 89,
+      "thai": "ผักชี",
+      "daang": "พูฆี",
+      "ipa": "hpu-gi",
+      "emoji": "assets/icons/coriander.jpg",
+      "category": "fruit"
+    },
+    {
+      "id": 90,
+      "thai": "กุ้ง",
+      "daang": "มาโฆต",
+      "ipa": "ma-gotK",
+      "emoji": "assets/icons/prawn.jpg",
+      "category": "animal"
+    },
+    {
+      "id": 91,
+      "thai": "ตะไคร้",
+      "daang": "กาโฮม",
+      "ipa": "ka-hom",
+      "emoji": "assets/icons/lemongrass.jpg",
+      "category": "fruit"
+    },
+    {
+      "id": 92,
+      "thai": "แตงกวา",
+      "daang": "ดีเฆีย",
+      "ipa": "di-gyi",
+      "emoji": "assets/icons/cucumber.jpg",
+      "category": "fruit"
+    },
+    {
+      "id": 93,
+      "thai": "มันฝรั่ง",
+      "daang": "ตูแค",
+      "ipa": "tu-hkae",
+      "emoji": "assets/icons/potato.jpg",
+      "category": "fruit"
+    },
+    {
+      "id": 94,
+      "thai": "หนังสือ",
+      "daang": "บับ",
+      "ipa": "bAp",
+      "emoji": "assets/icons/books.jpg",
+      "category": "items"
+    },
+    {
+      "id": 95,
+      "thai": "แหวน",
+      "daang": "ซีกานู",
+      "ipa": "si-ka-nu",
+      "emoji": "assets/icons/ring.jpg",
+      "category": "items"
+    },
+    {
+      "id": 96,
+      "thai": "ปาก",
+      "daang": "โมต",
+      "ipa": "motK",
+      "emoji": "assets/icons/mouth.jpg",
+      "category": "body"
+    },
+    {
+      "id": 97,
+      "thai": "หนู",
+      "daang": "มาหนาย",
+      "ipa": "ma-hnay",
+      "emoji": "assets/icons/rat.jpg",
+      "category": "animal"
+    },
+    {
+      "id": 98,
+      "thai": "ตัวกินมด",
+      "daang": "มากาปึร",
+      "ipa": "ma-ka-puer",
+      "emoji": "assets/icons/anteater.jpg",
+      "category": "animal"
+    },
+    {
+      "id": 99,
+      "thai": "นาก",
+      "daang": "มาปูน",
+      "ipa": "ma-pun",
+      "emoji": "assets/icons/otter.jpg",
+      "category": "animal"
+    },
+    {
+      "id": 100,
+      "thai": "จระเข้",
+      "daang": "มา งืก",
+      "ipa": "ma-ngiik",
+      "emoji": "assets/icons/crocodile.jpg",
+      "category": "animal"
+    },
+    {
+      "id": 101,
+      "thai": "แมลงเม่า",
+      "daang": "มากลัห",
+      "ipa": "ma-klAx",
+      "emoji": "assets/icons/flying_termite.jpg",
+      "category": "animal"
+    },
+    {
+      "id": 102,
+      "thai": "หน้าผาก",
+      "daang": "กาต็อห",
+      "ipa": "ka-tAwx",
+      "emoji": "assets/icons/forehead.jpg",
+      "category": "body"
+    },
+    {
+      "id": 103,
+      "thai": "กระรอกบิน",
+      "daang": "มากาโวว",
+      "ipa": "ma-ka-wow",
+      "emoji": "assets/icons/flying_squirrel.jpg",
+      "category": "animal"
+    },
+    {
+      "id": 104,
+      "thai": "สาก",
+      "daang": "อึณเกร",
+      "ipa": "queunkre",
+      "emoji": "assets/icons/pestle.jpg",
+      "category": "items"
+    },
+    {
+      "id": 105,
+      "thai": "ครก",
+      "daang": "อึณบอ",
+      "ipa": "queyn-bao",
+      "emoji": "assets/icons/mortar.jpg",
+      "category": "items"
+    },
+    {
+      "id": 106,
+      "thai": "ชาม",
+      "daang": "ซีลาต ฮาบ",
+      "ipa": "silayt",
+      "emoji": "assets/icons/bowl.jpg",
+      "category": "items"
+    },
+    {
+      "id": 107,
+      "thai": "ข้าวโพด",
+      "daang": "อาหรึก",
+      "ipa": "qahrueK",
+      "emoji": "assets/icons/corn.jpg",
+      "category": "fruit"
+    },
+    {
+      "id": 108,
+      "thai": "แก้วมังกร",
+      "daang": "เบล มากราย",
+      "ipa": "ble ma-kray",
+      "emoji": "assets/icons/dragon_fruit.jpg",
+      "category": "fruit"
+    },
+    {
+      "id": 109,
+      "thai": "ส้ม",
+      "daang": "เบล มาฌ็อก",
+      "ipa": "ble ma-zaokK",
+      "emoji": "assets/icons/orange.jpg",
+      "category": "fruit"
+    },
+    {
+      "id": 110,
+      "thai": "แมงมุม",
+      "daang": "มาปูงเปยณ",
+      "ipa": "ma-pung-pyeyn",
+      "emoji": "assets/icons/spider.jpg",
+      "category": "animal"
     }
   ]
 }

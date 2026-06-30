@@ -16,8 +16,11 @@ const ROUTES = {
   },
   game: {
     html: "components/game/game.html",
-    css:  ["components/game/game.css"],
-    js:   ["components/game/game.js"],
+    css: ["components/game/game.css"],
+    js: [
+        "core/lesson-manager.js",
+        "components/game/game.js"
+    ],
     init: "initGameScreen",
   },
   spelling: {

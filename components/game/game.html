@@ -1,0 +1,72 @@
+<div class="game-page">
+    <!-- Header -->
+    <header class="game-header">
+        <div class="title-section">
+            <div class="title-icon">
+                <i class="fa-solid fa-pen"></i>
+            </div>
+
+            <span>สะกดคำ</span>
+        </div>
+
+        <div class="header-stats">
+            <div class="heart-badge">❤️ <span id="heartCount">5</span></div>
+
+            <div class="xp-badge">⚡ <span id="totalXP">9000</span> XP</div>
+        </div>
+    </header>
+
+    <!-- Progress -->
+
+    <div class="progress-wrapper">
+        <div class="progress-bar">
+            <div id="progressFill"></div>
+        </div>
+
+        <span id="questionCounter">1/10</span>
+    </div>
+
+    <!-- Question -->
+
+    <div class="question-card">
+        <h2 class="question-title">รูปภาพ</h2>
+
+        <p id="categoryName" class="question-category">หมวดสัตว์/สิ่งมีชีวิต</p>
+
+        <div id="questionImage"></div>
+    </div>
+
+    <!-- Input -->
+
+    <label class="answer-label"> พิมพ์คำภาษาดาราจากภาพที่เห็น </label>
+
+    <input id="answerInput" type="text" placeholder="พิมพ์คำตอบที่นี่..." />
+
+    <!-- Buttons -->
+
+    <div class="button-row">
+        <button id="checkBtn">ตรวจคำตอบ 🔍</button>
+
+        <button id="skipBtn">ข้ามคำนี้ ⏭️</button>
+    </div>
+
+    <!-- Feedback -->
+
+    <div id="feedbackCard"></div>
+
+    <!-- Bottom Nav -->
+
+    <div class="bottom-nav">
+        <button class="nav-item">
+            <i class="fas fa-trophy"></i>
+        </button>
+
+        <button class="nav-item active">
+            <i class="fas fa-home"></i>
+        </button>
+
+        <button class="nav-item">
+            <i class="fas fa-user"></i>
+        </button>
+    </div>
+</div>

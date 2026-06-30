@@ -1,0 +1,199 @@
+.game-page {
+    background: #f7f7f7;
+    min-height: 100vh;
+    padding: 20px;
+    padding-bottom: 110px;
+}
+
+/* HEADER */
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.title-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.title-icon {
+    width: 42px;
+    height: 42px;
+    background: #1e78e8;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+}
+
+.header-stats {
+    display: flex;
+    gap: 10px;
+}
+
+.heart-badge {
+    background: #ffb3c7;
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+
+.xp-badge {
+    background: #d6c6ff;
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+
+/* PROGRESS */
+
+.progress-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 8px;
+    background: #ddd;
+    border-radius: 999px;
+}
+
+#progressFill {
+    height: 100%;
+    width: 0%;
+    background: #1e78e8;
+    border-radius: 999px;
+}
+
+/* CARD */
+
+.question-card {
+    background: white;
+    border: 2px solid #6aa9ff;
+    border-radius: 18px;
+
+    text-align: center;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+}
+
+.question-title {
+    margin: 0;
+    font-size: 34px;
+}
+
+.question-category {
+    color: #888;
+    margin-top: 5px;
+}
+
+.question-img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+}
+
+.emoji-display {
+    font-size: 150px;
+    line-height: 1;
+}
+
+/* INPUT */
+
+.answer-label {
+    display: block;
+    text-align: center;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+#answerInput {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+/* BUTTON */
+
+.button-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.button-row button {
+    flex: 1;
+
+    border: none;
+
+    padding: 12px;
+
+    border-radius: 25px;
+
+    background: white;
+
+    box-shadow: 0 0 0 1px #ccc inset;
+
+    cursor: pointer;
+}
+
+/* FEEDBACK */
+
+#feedbackCard {
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 20px;
+
+    border-radius: 20px;
+}
+
+.feedback-success {
+    background: #f2ffe8;
+    border: 2px solid #95d64f;
+}
+
+.feedback-error {
+    background: #fff0f0;
+    border: 2px solid #ff5d5d;
+}
+
+/* NAV */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 90%;
+
+    background: #d9d9d9;
+
+    border-radius: 40px;
+
+    display: flex;
+    justify-content: space-around;
+
+    padding: 14px;
+}
+
+.nav-item {
+    border: none;
+    background: none;
+    font-size: 22px;
+}

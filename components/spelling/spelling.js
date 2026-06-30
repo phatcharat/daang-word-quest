@@ -8,8 +8,10 @@ function initSpellingScreen() {
 
                 const category = card.dataset.category;
 
-                window.appState.category = category;
-                window.appState.gameMode = "spelling";
+                resetSession();
+
+                window.appState.session.category = category;
+                window.appState.session.lessonId = 1;
 
                 navigateTo("game");
             });
