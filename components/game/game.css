@@ -1,199 +1,154 @@
-.game-page {
-    background: #f7f7f7;
-    min-height: 100vh;
-    padding: 20px;
-    padding-bottom: 110px;
-}
 
 /* HEADER */
 
-.game-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+.spelling-header{
+    background:#FFFFFF;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 24px;
+
+    border-bottom:1px solid #EAEAEA;
 }
 
-.title-section {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.page-title{
+    display:flex;
+    align-items:center;
+    gap:2px;
 }
 
-.title-icon {
-    width: 42px;
-    height: 42px;
-    background: #1e78e8;
-    border-radius: 10px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    color: white;
+.page-title h1{
+    font-size:20px;
+    font-weight:700;
 }
 
-.header-stats {
-    display: flex;
-    gap: 10px;
+.title-icon{
+    width:52px;
+    height:52px;
+
+    border-radius:14px;
+
+    background:#066FD1;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
 }
 
-.heart-badge {
-    background: #ffb3c7;
-    padding: 6px 14px;
-    border-radius: 20px;
+/* STATS */
+
+.user-stats{
+    display:flex;
+    gap:8px;
 }
 
-.xp-badge {
-    background: #d6c6ff;
-    padding: 6px 14px;
-    border-radius: 20px;
+.stat{
+    padding:8px 12px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:600;
 }
 
-/* PROGRESS */
-
-.progress-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
+.fire{
+    background:#FFE4B3;
 }
 
-.progress-bar {
-    flex: 1;
-    height: 8px;
-    background: #ddd;
-    border-radius: 999px;
+.xp{
+    background:#DDD6FF;
 }
 
-#progressFill {
-    height: 100%;
-    width: 0%;
-    background: #1e78e8;
-    border-radius: 999px;
+/* CATEGORY */
+
+.category-list{
+    padding:24px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
 }
 
-/* CARD */
+.category-card{
+    background:#FFFFFF;
 
-.question-card {
-    background: white;
-    border: 2px solid #6aa9ff;
-    border-radius: 18px;
+    border:none;
+    border-radius:20px;
 
-    text-align: center;
+    padding:22px;
 
-    padding: 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-    margin-bottom: 20px;
+    text-align:left;
+
+    cursor:pointer;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.05);
 }
 
-.question-title {
-    margin: 0;
-    font-size: 34px;
+.category-content h3{
+    margin:0 0 8px;
+    font-size:22px;
+    font-weight:700;
 }
 
-.question-category {
-    color: #888;
-    margin-top: 5px;
+.category-content p{
+    margin:0;
+    color:#666;
 }
 
-.question-img {
-    width: 180px;
-    height: 180px;
-    object-fit: contain;
+.category-icon{
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+    font-size:28px;
 }
 
-.emoji-display {
-    font-size: 150px;
-    line-height: 1;
+.orange{
+    background:#F5A623;
 }
 
-/* INPUT */
-
-.answer-label {
-    display: block;
-    text-align: center;
-    color: #999;
-    margin-bottom: 10px;
+.blue{
+    background:#4A90E2;
 }
 
-#answerInput {
-    width: 100%;
-    padding: 14px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    font-size: 18px;
-    box-sizing: border-box;
+.green{
+    background:#1ABC75;
 }
 
-/* BUTTON */
-
-.button-row {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
+.cyan{
+    background:#22B8CF;
 }
 
-.button-row button {
-    flex: 1;
+@media(max-width:768px){
 
-    border: none;
+    .spelling-header{
+        padding-top: calc(env(safe-area-inset-top, 0px) + 20px);
+        padding-right: 24px;
+        padding-bottom: 20px;
+        padding-left: 24px;
+    }
 
-    padding: 12px;
+    .page-title h1{
+        font-size:22px;
+    }
 
-    border-radius: 25px;
+    .category-content h3{
+        font-size:18px;
+    }
 
-    background: white;
-
-    box-shadow: 0 0 0 1px #ccc inset;
-
-    cursor: pointer;
-}
-
-/* FEEDBACK */
-
-#feedbackCard {
-    display: none;
-
-    margin-top: 20px;
-
-    padding: 20px;
-
-    border-radius: 20px;
-}
-
-.feedback-success {
-    background: #f2ffe8;
-    border: 2px solid #95d64f;
-}
-
-.feedback-error {
-    background: #fff0f0;
-    border: 2px solid #ff5d5d;
-}
-
-/* NAV */
-
-.bottom-nav {
-    position: fixed;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    width: 90%;
-
-    background: #d9d9d9;
-
-    border-radius: 40px;
-
-    display: flex;
-    justify-content: space-around;
-
-    padding: 14px;
-}
-
-.nav-item {
-    border: none;
-    background: none;
-    font-size: 22px;
+    .category-icon{
+        width:60px;
+        height:60px;
+    }
 }

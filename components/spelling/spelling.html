@@ -1,83 +1,109 @@
-<div class="spelling-page">
+<!DOCTYPE html>
+<html lang="th">
 
-    <header class="spelling-header page-header">
-        <div class="page-title">
-            <div class="title-icon">
-                <i class="fa-solid fa-pen"></i>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Spelling</title>
+
+    <link rel="stylesheet" href="../../styles/reset.css">
+    <link rel="stylesheet" href="../../styles/variables.css">
+    <link rel="stylesheet" href="../../styles/global.css">
+
+    <link rel="stylesheet" href="spelling.css">
+    <link rel="stylesheet" href="../shared/bottom-nav.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="spelling-page">
+
+        <header class="spelling-header page-header">
+            <div class="page-title">
+                <div class="title-icon">
+                    <i class="fa-solid fa-pen"></i>
+                </div>
+
+                <h2>สะกดคำ</h2>
             </div>
 
-            <h1>สะกดคำ</h1>
+            <div class="user-stats">
+                <div class="stat fire">🔥 1 วัน</div>
+                <div class="stat xp">⚡ 1000 XP</div>
+            </div>
+
+        </header>
+
+        <section class="category-list">
+
+            <button class="category-card" data-category="items">
+                <div class="category-content">
+                    <h3>สิ่งของ/เครื่องใช้</h3>
+                    <p>คำศัพท์เกี่ยวกับสิ่งของในชีวิตประจำวัน</p>
+                </div>
+
+                <div class="category-icon orange">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+            </button>
+
+            <button class="category-card" data-category="animal">
+                <div class="category-content">
+                    <h3>สัตว์/สิ่งมีชีวิต</h3>
+                    <p>เรียนรู้ชื่อสัตว์และสิ่งมีชีวิต</p>
+                </div>
+
+                <div class="category-icon blue">
+                    <i class="fa-solid fa-paw"></i>
+                </div>
+            </button>
+
+            <button class="category-card" data-category="fruit">
+                <div class="category-content">
+                    <h3>ผักและผลไม้</h3>
+                    <p>คำศัพท์หมวดอาหารและพืชผัก</p>
+                </div>
+
+                <div class="category-icon green">
+                    <i class="fa-solid fa-apple-whole"></i>
+                </div>
+            </button>
+
+            <button class="category-card" data-category="body">
+                <div class="category-content">
+                    <h3>อวัยวะในร่างกาย</h3>
+                    <p>เรียนรู้ส่วนต่าง ๆ ของร่างกาย</p>
+                </div>
+
+                <div class="category-icon cyan">
+                    <i class="fa-solid fa-person"></i>
+                </div>
+            </button>
+
+        </section>
+
+        <div class="bottom-nav">
+
+            <button class="nav-item" onclick="navigateTo('leaderboard')">
+                <i class="fas fa-trophy"></i>
+            </button>
+
+            <button class="nav-item active" onclick="navigateTo('home')">
+                <i class="fas fa-home"></i>
+            </button>
+
+            <button class="nav-item" onclick="navigateTo('profile')">
+                <i class="fas fa-user"></i>
+            </button>
+
         </div>
-
-        <div class="user-stats">
-            <div class="stat fire">🔥 1 วัน</div>
-            <div class="stat xp">⚡ 1000 XP</div>
-        </div>
-
-    </header>
-
-    <section class="category-list">
-
-        <button class="category-card" data-category="items">
-            <div class="category-content">
-                <h3>สิ่งของ/เครื่องใช้</h3>
-                <p>คำศัพท์เกี่ยวกับสิ่งของในชีวิตประจำวัน</p>
-            </div>
-
-            <div class="category-icon orange">
-                <i class="fa-solid fa-bag-shopping"></i>
-            </div>
-        </button>
-
-        <button class="category-card" data-category="animal">
-            <div class="category-content">
-                <h3>สัตว์/สิ่งมีชีวิต</h3>
-                <p>เรียนรู้ชื่อสัตว์และสิ่งมีชีวิต</p>
-            </div>
-
-            <div class="category-icon blue">
-                <i class="fa-solid fa-paw"></i>
-            </div>
-        </button>
-
-        <button class="category-card" data-category="fruit">
-            <div class="category-content">
-                <h3>ผักและผลไม้</h3>
-                <p>คำศัพท์หมวดอาหารและพืชผัก</p>
-            </div>
-
-            <div class="category-icon green">
-                <i class="fa-solid fa-apple-whole"></i>
-            </div>
-        </button>
-
-        <button class="category-card" data-category="body">
-            <div class="category-content">
-                <h3>อวัยวะในร่างกาย</h3>
-                <p>เรียนรู้ส่วนต่าง ๆ ของร่างกาย</p>
-            </div>
-
-            <div class="category-icon cyan">
-                <i class="fa-solid fa-person"></i>
-            </div>
-        </button>
-
-    </section>
-
-    <div class="bottom-nav">
-
-        <button class="nav-item" onclick="navigateTo('leaderboard')">
-            <i class="fas fa-trophy"></i>
-        </button>
-
-        <button class="nav-item active" onclick="navigateTo('home')">
-            <i class="fas fa-home"></i>
-        </button>
-
-        <button class="nav-item" onclick="navigateTo('profile')">
-            <i class="fas fa-user"></i>
-        </button>
-
     </div>
 
-</div>
+    <script src="home.js"></script>
+</body>
+
+</html>
