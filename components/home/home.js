@@ -22,7 +22,7 @@ function navigateTo(page) {
             break;
 
         case "profile":
-            alert("Coming Soon");
+            alert("../profile/profile.html");
             break;
     }
 }

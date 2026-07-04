@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="th">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
+        <title>สรุปผลบทเรียน</title>
+
+        <link rel="stylesheet" href="../../styles/reset.css" />
+        <link rel="stylesheet" href="../../styles/variables.css" />
+        <link rel="stylesheet" href="../../styles/global.css" />
+        <link rel="stylesheet" href="result.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        />
+    </head>
+    <body>
+        <div class="qs-page-wrapper">
+            <div class="qs-header-area">
+                <h1 class="qs-title" id="qsTitle">เก่งมาก! 🎉</h1>
+                <p class="qs-subtitle" id="qsSubtitle"></p>
+            </div>
+
+            <div class="qs-card-result correct-border-theme">
+                <p class="qs-big-number green-text" id="qsScore">0</p>
+                <p class="qs-desc-text dark-text">คะแนนที่ทำได้ในบทนี้</p>
+            </div>
+
+            <div class="qs-row-cards">
+                <div class="qs-card-result normal-border-theme qs-row-card">
+                    <p class="qs-big-number green-text" id="qsCorrect">0</p>
+                    <p class="qs-desc-text gray-text">ตอบถูก</p>
+                </div>
+                <div class="qs-card-result normal-border-theme qs-row-card">
+                    <p class="qs-big-number dark-text" id="qsWrong">0</p>
+                    <p class="qs-desc-text gray-text">ตอบผิด</p>
+                </div>
+            </div>
+
+            <div class="qs-card-result normal-border-theme">
+                <p class="qs-big-number dark-text" id="qsXpAwarded">+0 XP</p>
+                <p class="qs-desc-text gray-text">XP ที่ได้รับจากบทเรียนนี้</p>
+                <p class="qs-desc-text gray-text" id="qsTotalXp"></p>
+            </div>
+
+            <div class="qs-details-container">
+                <h3 class="qs-section-heading">คำที่ตอบถูก</h3>
+                <div class="qs-badges-flex" id="qsCorrectBadges"></div>
+
+                <hr class="qs-line-divider" />
+
+                <h3 class="qs-section-heading">คำที่ตอบผิด</h3>
+                <div class="qs-badges-flex" id="qsWrongBadges"></div>
+            </div>
+
+            <div class="qs-action-area">
+                <button class="qs-btn-primary" id="qsRetryBtn">
+                    เล่นบทเรียนนี้อีกครั้ง
+                </button>
+                <button class="qs-btn-secondary" id="qsBackBtn">
+                    กลับไปหน้าบทเรียน
+                </button>
+            </div>
+        </div>
+
+        <script src="result.js"></script>
+    </body>
+</html>

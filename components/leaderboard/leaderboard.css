@@ -1,0 +1,219 @@
+.leaderboard-page {
+    background-color: #f8fafc;
+    min-height: 100vh;
+    padding-bottom: 100px; /* เว้นระยะไม่ให้เมนูล่างบังข้อมูล */
+    box-sizing: border-box;
+}
+
+/* Header & Avatar Row */
+.lb-header {
+    background-color: #ffffff;
+    padding: 16px 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+.lb-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.lb-logo img {
+    height: 32px;
+}
+.lb-user-stats {
+    display: flex;
+    gap: 8px;
+}
+.lb-badge-stat {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+.lb-badge-stat.streak {
+    background-color: #ffedd5;
+    color: #ea580c;
+}
+.lb-badge-stat.xp {
+    background-color: #e0e7ff;
+    color: #4f46e5;
+}
+.lb-avatar-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+}
+.lb-avatar-container {
+    position: relative;
+    display: inline-block;
+}
+.lb-profile-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid #e2e8f0;
+    background: #f1f5f9;
+}
+.lb-profile-letter {
+    position: absolute;
+    right: -10px;
+    bottom: 2px;
+    width: 24px;
+    height: 24px;
+    background-color: #066fd1;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ffffff;
+}
+
+/* Title Section */
+.lb-title-section {
+    padding: 20px 24px 10px 24px;
+}
+.lb-title-section h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0;
+}
+.lb-title-section p {
+    font-size: 14px;
+    color: #64748b;
+    margin: 4px 0 0 0;
+}
+
+/* Summary Box Cards */
+.lb-summary-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 10px 24px 20px 24px;
+}
+.lb-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 85px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    text-align: center;
+}
+.lb-card.xp-card {
+    background-color: #b4c6fc; /* ไฮไลต์ม่วงฝั่งขวา */
+    border: none;
+}
+.lb-card-medal {
+    font-size: 26px;
+    margin-bottom: 4px;
+}
+.lb-card-xp-value {
+    font-size: 20px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+.lb-card-text {
+    font-size: 13px;
+    color: #475569;
+}
+.lb-card-text.sub-purple {
+    color: #4338ca;
+    font-weight: 500;
+}
+
+/* Leaderboard List Rows */
+.lb-list-section {
+    padding: 0 24px;
+}
+.lb-list-box {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 8px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+.lb-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid #f1f5f9;
+}
+.lb-row:last-child {
+    border-bottom: none;
+}
+
+/* 🌟 แถวไฮไลต์ของตัวเองตามรูปภาพต้นฉบับ */
+/* ฯองคียนไหลตของตัวเองตามรูปภาพต้นฉบับ */
+.lb-row.row-highlight {
+    background-color: #b4c6fc;
+    border-radius: 14px;
+    border-bottom: none;
+}
+
+.lb-empty-state {
+    padding: 32px 16px;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.lb-row-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.lb-number {
+    font-size: 14px;
+    font-weight: 800;
+    color: #64748b;
+    width: 24px;
+    text-align: center;
+}
+.lb-medal-icon {
+    font-size: 20px;
+    width: 24px;
+    text-align: center;
+}
+.lb-user-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.lb-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+}
+.lb-streak {
+    font-size: 11px;
+    color: #64748b;
+    font-weight: 500;
+}
+.lb-row.row-highlight .lb-streak {
+    color: #4338ca;
+}
+
+/* ฝั่งคะแนนขวา */
+.lb-xp-pill {
+    font-size: 12px;
+    font-weight: 700;
+    color: #475569;
+    background: #f1f5f9;
+    padding: 4px 14px;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+}
+.lb-row.row-highlight .lb-xp-pill {
+    background: #ffffff;
+    color: #4f46e5;
+    border: none;
+}

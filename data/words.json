@@ -35,7 +35,7 @@
     {
       "id": 5,
       "thai": "กล้วย",
-      "daang": "ไกล",
+      "daang": "ฆลอย",
       "ipa": "klay",
       "emoji": "assets/icons/banana.jpg",
       "category": "fruit"
@@ -267,7 +267,7 @@
     {
       "id": 34,
       "thai": "รองเท้า",
-      "daang": "เคลบ",
+      "daang": "แคลบ",
       "ipa": "hkqleap",
       "emoji": "🩴",
       "category": "items"
@@ -562,11 +562,11 @@
     },
     {
       "id": 70,
-      "thai": "เมล็ดทานตะวัน",
-      "daang": "เบล มังฌึอม",
-      "ipa": "bqle mAng-zueam",
-      "emoji": "assets/icons/seed_sunflower.jpg",
-      "category": "fruit"
+      "thai": "",
+      "daang": "",
+      "ipa": "",
+      "emoji": "",
+      "category": ""
     },
     {
       "id": 71,
@@ -618,27 +618,27 @@
     },
     {
       "id": 77,
-      "thai": "หม้อนึ่ง",
-      "daang": "อึณโฮ็ง",
-      "ipa": "qinK-hongK",
-      "emoji": "assets/icons/pot_th.jpg",
-      "category": "items"
+      "thai": "",
+      "daang": "",
+      "ipa": "",
+      "emoji": "",
+      "category": ""
     },
     {
       "id": 78,
-      "thai": "เชือก",
-      "daang": "วัน",
-      "ipa": "wAn",
-      "emoji": "assets/icons/robe.jpg",
-      "category": "items"
+      "thai": "",
+      "daang": "",
+      "ipa": "",
+      "emoji": "",
+      "category": ""
     },
     {
       "id": 79,
-      "thai": "ปู",
-      "daang": "มาดีเฆรียห",
-      "ipa": "ma-di-griax",
-      "emoji": "assets/icons/crab.svg",
-      "category": "animal"
+      "thai": "",
+      "daang": "",
+      "ipa": "",
+      "emoji": "",
+      "category": ""
     },
     {
       "id": 80,

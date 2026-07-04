@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="th">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
+
+        <title>Daang Word Quest</title>
+
+        <link rel="stylesheet" href="../../styles/reset.css" />
+        <link rel="stylesheet" href="../../styles/variables.css" />
+        <link rel="stylesheet" href="../../styles/global.css" />
+
+        <link rel="stylesheet" href="leaderboard.css" />
+        <link rel="stylesheet" href="../shared/bottom-nav.css" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        />
+    </head>
+
+    <body>
+        <div class="leaderboard-page">
+            <!-- 1. Header ส่วนบน (โลโก้ และสเตตัสหลอดพลัง) -->
+            <header class="lb-header">
+                <div class="lb-header-top">
+                    <div class="lb-logo">
+                        <img
+                            src="../../assets/images/DaangLogo.png"
+                            alt="DaangQuest"
+                        />
+                    </div>
+                    <div class="lb-user-stats">
+                        <span class="lb-badge-stat streak" id="lb-header-streak"
+                            >🔥 0 วัน</span
+                        >
+                        <span class="lb-badge-stat xp" id="lb-header-xp"
+                            >⚡ 0 XP</span
+                        >
+                    </div>
+                </div>
+
+                <!-- วงกลมโปรไฟล์ซ้อนกันตามรูป -->
+                <div class="lb-avatar-row">
+                    <div class="lb-avatar-container">
+                        <img
+                            src="https://api.dicebear.com/7.x/adventurer/svg?seed=Mark"
+                            alt="User Avatar"
+                            class="lb-profile-img"
+                        />
+                        <div class="lb-profile-letter" id="lb-avatar-letter">
+                            ?
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 2. ส่วนหัวข้อหลัก -->
+            <section class="lb-title-section">
+                <h1>Leaderboard 🏆</h1>
+                <p>อันดับประจำสัปดาห์</p>
+            </section>
+
+            <!-- 3. การ์ดสรุปอันดับและคะแนนของตัวเอง (2 ฝั่งแยกสี) -->
+            <section class="lb-summary-cards">
+                <div class="lb-card rank-card">
+                    <span class="lb-card-medal">🏅</span>
+                    <span class="lb-card-text"
+                        >อันดับของคุณ: <strong id="lb-my-rank">-</strong></span
+                    >
+                </div>
+
+                <div class="lb-card xp-card">
+                    <span class="lb-card-xp-value" id="lb-my-xp">0 XP</span>
+                    <span class="lb-card-text sub-purple">คะแนนของคุณ</span>
+                </div>
+            </section>
+
+            <!-- 4. รายการตารางอันดับกระดานคะแนน (รอโหลดข้อมูลจาก JS) -->
+            <section class="lb-list-section">
+                <div id="leaderboard-list-box" class="lb-list-box">
+                    <!-- แถวรายชื่อจะถูกพ่นออกมาตรงนี้โดยอัตโนมัติ -->
+                </div>
+            </section>
+
+            <!-- Bottom Nav -->
+            <div class="bottom-nav">
+                <button
+                    class="nav-item"
+                    data-nav="leaderboard"
+                    onclick="
+                        window.location.href = '../leaderboard/leaderboard.html'
+                    "
+                >
+                    <i class="fas fa-trophy"></i>
+                </button>
+
+                <button
+                    class="nav-item"
+                    data-nav="home"
+                    onclick="window.location.href = '../home/home.html'"
+                >
+                    <i class="fas fa-home"></i>
+                </button>
+
+                <button
+                    class="nav-item"
+                    data-nav="profile"
+                    disabled
+                    title="ไม่สามารถไปหน้า Profile จากหน้า Leaderboard ได้"
+                >
+                    <i class="fas fa-user"></i>
+                </button>
+            </div>
+        </div>
+
+        <script type="module" src="leaderboard.js"></script>
+    </body>
+</html>

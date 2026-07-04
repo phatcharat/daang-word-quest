@@ -1,0 +1,171 @@
+/* ===== components/quiz-summary/quiz-summary.css ===== */
+
+.qs-page-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    padding: 24px 20px 140px 20px;
+    background: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 99999 !important; /* ดันขึ้นเลเยอร์สูงสุดล้างปัญหาม่านค้าง */
+}
+
+.qs-header-area {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.qs-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #000000;
+    margin: 0;
+}
+.qs-subtitle {
+    font-size: 15px;
+    color: #64748b;
+    margin: 4px 0 0 0;
+    font-weight: 500;
+}
+
+/* การ์ดสไตล์กล่องตามแบบรูปภาพ */
+.qs-card-result {
+    background: white;
+    width: 100%;
+    max-width: 420px;
+    border-radius: 18px;
+    padding: 18px;
+    text-align: center;
+    margin-bottom: 14px;
+    box-sizing: border-box;
+}
+
+.correct-border-theme {
+    border: 1.5px solid #15803d;
+}
+.normal-border-theme {
+    border: 1px solid #e2e8f0;
+}
+
+.qs-big-number {
+    font-size: 34px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+}
+.qs-desc-text {
+    font-size: 14px;
+    margin: 4px 0 0 0;
+    font-weight: 600;
+}
+
+.green-text {
+    color: #15803d;
+}
+.dark-text {
+    color: #000000;
+}
+.gray-text {
+    color: #475569;
+}
+
+/* แถวการ์ดสองคอลัมน์ (ตอบถูก / ตอบผิด) */
+.qs-row-cards {
+    display: flex;
+    gap: 14px;
+    width: 100%;
+    max-width: 420px;
+    margin-bottom: 14px;
+    box-sizing: border-box;
+}
+.qs-row-card {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+/* กล่องแสดงรายชื่อคำศัพท์แบบก้อน Badge */
+.qs-details-container {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.qs-section-heading {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000000;
+    margin: 0 0 12px 0;
+}
+
+.qs-badges-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    min-height: 34px;
+}
+
+/* Badge ทรงเม็ดยาถอดรหัสตามภาพ */
+.qs-pill-badge {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.badge-green {
+    background: #e8f5e9;
+    color: #15803d;
+}
+.badge-red {
+    background: #ffebee;
+    color: #b91c1c;
+}
+.qs-empty-info {
+    font-size: 13px;
+    color: #94a3b8;
+    font-style: italic;
+}
+
+.qs-line-divider {
+    border: none;
+    border-top: 1px solid #e2e8f0;
+    margin: 16px 0;
+}
+
+/* โซนกลุ่มปุ่มควบคุมสั่งการ */
+.qs-action-area {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 420px;
+}
+.qs-btn-primary {
+    width: 100%;
+    padding: 16px;
+    background: #6d28d9;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.qs-btn-secondary {
+    width: 100%;
+    padding: 16px;
+    background: white;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}

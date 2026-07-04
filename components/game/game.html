@@ -1,109 +1,136 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="th">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+        <title>Game</title>
 
-    <title>Game</title>
+        <link rel="stylesheet" href="../../styles/reset.css" />
+        <link rel="stylesheet" href="../../styles/variables.css" />
+        <link rel="stylesheet" href="../../styles/global.css" />
 
-    <link rel="stylesheet" href="../../styles/reset.css">
-    <link rel="stylesheet" href="../../styles/variables.css">
-    <link rel="stylesheet" href="../../styles/global.css">
+        <link rel="stylesheet" href="game.css" />
+        <link rel="stylesheet" href="../shared/bottom-nav.css" />
 
-    <link rel="stylesheet" href="game.css">
-    <link rel="stylesheet" href="../shared/bottom-nav.css">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        />
+    </head>
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-</head>
-
-<body>
-    <div class="spelling-page">
-
-        <header class="spelling-header page-header">
-            <div class="page-title">
-                <div class="title-icon">
-                    <i class="fa-solid fa-pen"></i>
+    <body>
+        <div class="game-page">
+            <header class="game-header">
+                <div class="header-left">
+                    <span class="mode-icon"
+                        ><i class="fa-solid fa-pen"></i
+                    ></span>
+                    <span class="mode-title">สะกดคำ</span>
                 </div>
+                <div class="header-right">
+                    <span class="stat-badge xp-badge" id="header-xp-badge"
+                        >⚡ 0 XP</span
+                    >
+                </div>
+            </header>
 
-                <h3>แบบทดสอบ</h3>
+            <div class="game-loading" id="game-loading">
+                <i class="fa-solid fa-spinner fa-spin"></i>
+                <p id="game-loading-text">กำลังโหลดบทเรียน...</p>
             </div>
 
-            <div class="user-stats">
-                <div class="stat fire">🔥 1 วัน</div>
-                <div class="stat xp">⚡ 1000 XP</div>
+            <div class="quiz-content hidden" id="quiz-content">
+                <div class="progress-container">
+                    <div class="progress-bar-wrapper">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <span class="progress-text" id="progress-text"></span>
+                </div>
+
+                <div class="word-card-new-theme">
+                    <div class="card-content-wrapper">
+                        <div class="category-indicator">
+                            <h2>รูปภาพ</h2>
+                            <p>หมวดหมู่: <span id="current-category"></span></p>
+                        </div>
+
+                        <div class="image-placeholder"></div>
+                    </div>
+                </div>
+
+                <p class="input-hint">พิมพ์คำภาษาดาราอางจากภาพที่เห็น</p>
+                <div class="input-container">
+                    <input
+                        type="text"
+                        id="answer-input"
+                        placeholder="พิมพ์คำตอบที่นี่..."
+                        autocomplete="off"
+                    />
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-check" id="btn-check">
+                        ตรวจคำตอบ <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <button class="btn btn-skip" id="btn-skip">
+                        ข้ามคำนี้ <i class="fa-solid fa-share"></i>
+                    </button>
+                </div>
             </div>
 
-        </header>
-
-        <section class="category-list">
-
-            <button class="category-card" data-category="items">
-                <div class="category-content">
-                    <h3>สิ่งของ/เครื่องใช้</h3>
-                    <p>คำศัพท์เกี่ยวกับสิ่งของในชีวิตประจำวัน</p>
+            <div class="feedback-banner success hidden" id="feedback-success">
+                <div class="feedback-content">
+                    <h3>
+                        <i class="fa-solid fa-circle-check"></i> ถูกต้อง! +10 XP
+                    </h3>
+                    <p>ภาพที่เห็นสะกดว่า "cat"</p>
                 </div>
+                <button class="btn-next">
+                    คำต่อไป <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
 
-                <div class="category-icon orange">
-                    <i class="fa-solid fa-bag-shopping"></i>
+            <div class="feedback-banner error hidden" id="feedback-error">
+                <div class="feedback-content">
+                    <h3>
+                        <i class="fa-solid fa-circle-xmark"></i> ไม่ถูกต้อง!
+                    </h3>
+                    <p>คำตอบที่ถูกต้องคือ "cat"</p>
                 </div>
-            </button>
+                <button class="btn-next error-btn">
+                    ต่อไป <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
 
-            <button class="category-card" data-category="animal">
-                <div class="category-content">
-                    <h3>สัตว์/สิ่งมีชีวิต</h3>
-                    <p>เรียนรู้ชื่อสัตว์และสิ่งมีชีวิต</p>
-                </div>
-
-                <div class="category-icon blue">
-                    <i class="fa-solid fa-paw"></i>
-                </div>
-            </button>
-
-            <button class="category-card" data-category="fruit">
-                <div class="category-content">
-                    <h3>ผักและผลไม้</h3>
-                    <p>คำศัพท์หมวดอาหารและพืชผัก</p>
-                </div>
-
-                <div class="category-icon green">
-                    <i class="fa-solid fa-apple-whole"></i>
-                </div>
-            </button>
-
-            <button class="category-card" data-category="body">
-                <div class="category-content">
-                    <h3>อวัยวะในร่างกาย</h3>
-                    <p>เรียนรู้ส่วนต่าง ๆ ของร่างกาย</p>
-                </div>
-
-                <div class="category-icon cyan">
-                    <i class="fa-solid fa-person"></i>
-                </div>
-            </button>
-
-        </section>
-
-        <div class="bottom-nav">
-
-            <button class="nav-item" onclick="navigateTo('leaderboard')">
-                <i class="fas fa-trophy"></i>
-            </button>
-
-            <button class="nav-item active" onclick="navigateTo('home')">
-                <i class="fas fa-home"></i>
-            </button>
-
-            <button class="nav-item" onclick="navigateTo('profile')">
-                <i class="fas fa-user"></i>
-            </button>
-
+            <div class="bottom-nav">
+                <button
+                    class="nav-item"
+                    onclick="
+                        window.location.href = '../leaderboard/leaderboard.html'
+                    "
+                >
+                    <i class="fas fa-trophy"></i>
+                </button>
+                <button
+                    class="nav-item active"
+                    onclick="window.location.href = '../home/home.html'"
+                >
+                    <i class="fas fa-home"></i>
+                </button>
+                <button
+                    class="nav-item"
+                    onclick="window.location.href = '../profile/profile.html'"
+                >
+                    <i class="fas fa-user"></i>
+                </button>
+            </div>
         </div>
-    </div>
 
-    <script src="home.js"></script>
-</body>
-
+        <script src="../../core/lesson-manager.js"></script>
+        <script type="module" src="game.js"></script>
+    </body>
 </html>

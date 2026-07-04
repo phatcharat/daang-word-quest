@@ -1,0 +1,344 @@
+/* ===== components/profile/profile.css ===== */
+
+/* เคลียร์พื้นหลังหลักของหน้าโปรไฟล์ให้เป็นสีเทาอ่อนสะอาดตา */
+.profile-page-container {
+    background-color: #F7F9FC;
+    min-height: 100vh;
+    padding-bottom: 120px;
+    box-sizing: border-box;
+    font-family: 'Sarabun', sans-serif;
+    position: relative;
+}
+
+/* ตัวควบคุมเปิด-ปิดการสลับหน้าจอ */
+.profile-sub-view.hidden {
+    display: none !important;
+}
+
+/* ===================================================
+   🎨 [STYLING] เฉพาะโหมดแสดงผลหน้าหลัก (View Mode)
+   =================================================== */
+
+/* แบนเนอร์สีน้ำเงินสดด้านบน */
+.profile-blue-banner {
+    background-color: #1E70D6; /* เฉดสีน้ำเงินตรงตาม Screen Shot 2569-06-30 at 16.11.37.png */
+    padding: 30px 20px 40px 20px;
+    text-align: center;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.profile-center-title {
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+}
+
+/* วงกลมล้อมรอบรูปภาพ Woody Avatar */
+.profile-avatar-circle-wrapper {
+    position: relative;
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 12px auto;
+    border-radius: 50%;
+    border: 3px solid #FFFFFF;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: visible;
+}
+
+.profile-avatar-circle-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-text-name {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+}
+
+.profile-text-email {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 13px;
+    margin: 0 0 16px 0;
+    font-weight: 400;
+}
+
+/* ปุ่มกดแก้ไขทรงมนรีสีขาวลอย */
+.profile-pill-edit-btn {
+    background-color: #FFFFFF;
+    color: #1E70D6;
+    border: none;
+    padding: 6px 28px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* บอดี้สีเทาด้านล่างสำหรับวางชุดการ์ดคะแนน */
+.profile-content-body {
+    padding: 0 20px;
+    margin-top: -20px; /* ดันกล่องขึ้นไปเกยทับแบนเนอร์สีน้ำเงินเล็กน้อยเพิ่มมิติ */
+}
+
+/* การ์ดสถิติแบบคู่ซ้ายขวา (Streak & Rank) */
+.profile-twin-stats-card {
+    background: #FFFFFF;
+    border: 2px solid #3B82F6; /* ขอบสีฟ้าสดล้อมกรอบตามภาพถ่ายจอ */
+    border-radius: 18px;
+    display: flex;
+    padding: 14px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    margin-bottom: 16px;
+}
+
+.stat-half-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-half-col.border-right {
+    border-right: 1px solid #E5E7EB;
+}
+
+.stat-huge-value {
+    font-size: 20px;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 2px;
+}
+
+.stat-small-label {
+    font-size: 12px;
+    color: #9CA3AF;
+}
+
+/* การ์ดแสดงหลอดระดับ XP */
+.profile-xp-progress-card {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    margin-bottom: 24px;
+}
+
+.xp-card-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.xp-current-bold {
+    font-size: 16px;
+    font-weight: 800;
+    color: #111827;
+}
+
+.xp-target-muted {
+    font-size: 13px;
+    color: #9CA3AF;
+}
+
+/* รางหลอดและตัว Fill สีน้ำเงินวิ่ง */
+.xp-custom-progress-bar {
+    background-color: #E5E7EB;
+    height: 12px;
+    border-radius: 10px;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+
+.xp-progress-fill {
+    background-color: #1E70D6;
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
+
+.xp-card-bottom-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #9CA3AF;
+    font-weight: 500;
+}
+
+.profile-section-headline {
+    font-size: 15px;
+    font-weight: 700;
+    color: #9CA3AF;
+    margin: 0 0 10px 4px;
+}
+
+/* กล่องรายการเมนูตั้งค่า */
+.profile-menu-row-item {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.profile-menu-row-item.logout-theme {
+    border: 1px solid #FCA5A5; /* ขอบสีแดงอ่อนสไตล์ปุ่มออกจากระบบ */
+}
+
+.menu-row-left-content {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.menu-row-icon {
+    font-size: 16px;
+    color: #1E70D6;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-menu-row-item.logout-theme .menu-row-icon,
+.profile-menu-row-item.logout-theme .menu-row-text {
+    color: #DC2626; /* บังคับตัวอักษรและไอคอนภายในกล่อง Logout เป็นสีแดง */
+}
+
+.menu-row-text {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1F2937;
+}
+
+/* ===================================================
+   🎨 [STYLING] เฉพาะโหมดฟอร์มแก้ไข (Edit Mode)
+   =================================================== */
+
+/* ตู้คอนเทนเนอร์สีน้ำเงินล้วนทั้งแผ่นตามภาพที่ 2 */
+.profile-full-blue-container {
+    background-color: #1E70D6;
+    min-height: 100vh;
+    padding: 30px 24px;
+    box-sizing: border-box;
+}
+
+/* ตกแต่งไอคอนดินสอเหลืองวางทับมุมขวาล่างของรูปภาพ */
+.edit-mode-avatar .avatar-pencil-overlay-badge {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    background-color: #FFFFFF;
+    color: #F59E0B; /* สีเหลืองส้มของดินสอ */
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    border: 1px solid #E5E7EB;
+}
+
+.profile-edit-form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.profile-form-label {
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    text-align: left;
+}
+
+/* ช่องพิมพ์ข้อมูลทรงเหลี่ยมขอบมนสีขาวนวล */
+.profile-round-input-field {
+    background-color: #FFFFFF;
+    border: none;
+    padding: 14px 16px;
+    border-radius: 14px;
+    font-size: 15px;
+    color: #4B5563;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Sarabun', sans-serif;
+}
+
+.profile-round-input-field:focus {
+    outline: 2px solid #93C5FD;
+}
+
+/* 🟩 ปุ่มบันทึกสีเขียวมิ้นต์อ่อน ตัวอักษรสีเขียวสดเข้ม */
+.profile-green-save-btn {
+    background-color: #E8F5E9; /* พื้นหลังเขียวอ่อนละมุน */
+    color: #2E7D32;            /* ตัวอักษรเขียวเข้มตรงสเปกภาพถ่าย */
+    border: none;
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: background 0.2s;
+}
+
+.profile-green-save-btn:active {
+    background-color: #C8E6C9;
+}
+
+/* ===================================================
+   🎛️ [STYLING] แถบเมนูนำทางทรงแคปซูลลอย (Capsule Bottom Nav)
+   =================================================== */
+.floating-capsule-bottom-nav {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+    max-width: 420px;
+    background-color: #CCCCCC; /* สีเงิน/เทาอ่อนตาม Screen Shot 2569-06-30 at 16.11.37.png */
+    border-radius: 40px;       /* ความโค้งทรงมนแคปซูลกึ่งกลางแผ่น */
+    padding: 8px 16px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    z-index: 999;
+}
+
+.capsule-nav-item {
+    background: transparent;
+    border: none;
+    color: #4B5563;
+    font-size: 22px;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+/* ไฮไลต์สีน้ำเงินเมื่อปุ่มถูกเลือกใช้งาน */
+.capsule-nav-item.active {
+    color: #1E70D6 !important;
+}

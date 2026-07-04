@@ -1,154 +1,303 @@
-
-/* HEADER */
-
-.spelling-header{
-    background:#FFFFFF;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:20px 24px;
-
-    border-bottom:1px solid #EAEAEA;
+.game-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 16px 16px 120px 16px;
+    background: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
 }
 
-.page-title{
-    display:flex;
-    align-items:center;
-    gap:2px;
+/* ===== Header ===== */
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.mode-icon {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    background: #066fd1;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px; /* ปรับขนาดไอคอนด้านในให้บาลานซ์ */
+}
+.mode-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+.stat-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 6px;
+}
+.streak-badge {
+    background: #ffe4e6;
+    color: #e11d48;
+}
+.xp-badge {
+    background: #e0e7ff;
+    color: #4338ca;
 }
 
-.page-title h1{
-    font-size:20px;
-    font-weight:700;
+.hidden {
+    display: none !important;
+}
+/* ===== Progress Bar ===== */
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+.progress-bar-wrapper {
+    flex: 1;
+    height: 12px;
+    background: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+}
+.progress-fill {
+    height: 100%;
+    background: #066fd1;
+    border-radius: 999px;
+    transition: width 0.3s ease;
+}
+.progress-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
 }
 
-.title-icon{
-    width:52px;
-    height:52px;
-
-    border-radius:14px;
-
-    background:#066FD1;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    color:white;
+/* ===== Main Card ===== */
+.word-card {
+    background: white;
+    border: 2px solid #bee3f8;
+    border-radius: 24px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    margin-bottom: 16px;
+}
+.category-indicator h2 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 4px;
+}
+.category-indicator p {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 16px;
+}
+.image-placeholder {
+    width: 100%;
+    max-height: 240px;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image-placeholder img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
-/* STATS */
-
-.user-stats{
-    display:flex;
-    gap:8px;
+/* ===== Inputs & Hints ===== */
+.input-hint {
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+.input-container input {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 16px;
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.2s;
+    background: white;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+.input-container input:focus {
+    border-color: #066fd1;
 }
 
-.stat{
-    padding:8px 12px;
-    border-radius:20px;
-    font-size:14px;
-    font-weight:600;
+/* ===== Buttons ===== */
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+.btn {
+    flex: 1;
+    padding: 14px;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+.btn-check {
+    background: white;
+    border: 2px solid #e5e7eb;
+    color: #4b5563;
+}
+.btn-skip {
+    background: white;
+    border: 2px solid #e5e7eb;
+    color: #4b5563;
+}
+.btn:active {
+    transform: scale(0.98);
 }
 
-.fire{
-    background:#FFE4B3;
+/* ===== Feedback Banners ===== */
+.feedback-banner {
+    position: fixed;
+    bottom: 86px; /* 🌟 ขยับขึ้นมาเพื่อไม่ให้โดนปุ่มเมนูด้านล่างทับ */
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 32px);
+    max-width: calc(480px - 32px);
+    border-radius: 20px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1100; /* อยู่เหนือทุกสิ่ง */
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1);
+}
+.feedback-banner.success {
+    background: #dcfce7;
+    border: 2px solid #86efac;
+}
+.feedback-banner.success h3 {
+    color: #166534;
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+.feedback-banner.success p {
+    color: #14532d;
+    font-size: 14px;
 }
 
-.xp{
-    background:#DDD6FF;
+.feedback-banner.error {
+    background: #fee2e2;
+    border: 2px solid #fca5a5;
+}
+.feedback-banner.error h3 {
+    color: #991b1b;
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+.feedback-banner.error p {
+    color: #7f1d1d;
+    font-size: 14px;
 }
 
-/* CATEGORY */
-
-.category-list{
-    padding:24px;
-    display:flex;
-    flex-direction:column;
-    gap:18px;
+.btn-next {
+    padding: 12px 24px;
+    background: #066fd1;
+    color: white;
+    border: none;
+    border-radius: 999px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.btn-next.error-btn {
+    background: #dc2626;
 }
 
-.category-card{
-    background:#FFFFFF;
-
-    border:none;
-    border-radius:20px;
-
-    padding:22px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    text-align:left;
-
-    cursor:pointer;
-
-    box-shadow:0 2px 8px rgba(0,0,0,.05);
+/* ===== หน้าจอโหลดก่อนเริ่มเกม (กันหน้าจอกระพริบก่อนข้อมูลจริงมาถึง) ===== */
+.game-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 80px 20px;
+    color: #888;
+}
+.game-loading i {
+    font-size: 28px;
+    color: #066fd1;
+}
+.game-loading p {
+    font-size: 14px;
+    font-weight: 600;
 }
 
-.category-content h3{
-    margin:0 0 8px;
-    font-size:22px;
-    font-weight:700;
+/* ===== การ์ดดีไซน์ใหม่สไตล์เดียวกันกับหน้าเลือกหมวดหมู่ล่าสุด ===== */
+.word-card-new-theme {
+    position: relative;
+    margin: 16px 24px 24px 0px; /* เว้นขวาไว้ให้ไอคอนลอยหลุดออกไป */
+    display: flex;
+    align-items: center;
 }
 
-.category-content p{
-    margin:0;
-    color:#666;
+/* กล่องเนื้อหาหลัก: บีบเว้าโค้งฝั่งซ้ายเหมือนรูปหมวดหมู่ */
+.card-content-wrapper {
+    flex: 1;
+    background: white;
+    border-radius: 40px 24px 24px 40px; /* โค้งฝั่งซ้ายมนเป็นพิเศษ */
+    padding: 24px 40px 24px 24px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eaeaea;
+    z-index: 1;
 }
 
-.category-icon{
-    width:70px;
-    height:70px;
-
-    border-radius:50%;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    color:white;
-    font-size:28px;
+.category-indicator h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #2d3748;
+    margin: 0 0 4px 0;
+    text-align: left; /* เยื้องซ้ายตามธีมใหม่ */
 }
 
-.orange{
-    background:#F5A623;
+.category-indicator p {
+    font-size: 13px;
+    color: #718096;
+    margin: 0 0 16px 0;
+    text-align: left;
 }
 
-.blue{
-    background:#4A90E2;
+.image-placeholder {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f7fafc;
 }
 
-.green{
-    background:#1ABC75;
-}
-
-.cyan{
-    background:#22B8CF;
-}
-
-@media(max-width:768px){
-
-    .spelling-header{
-        padding-top: calc(env(safe-area-inset-top, 0px) + 20px);
-        padding-right: 24px;
-        padding-bottom: 20px;
-        padding-left: 24px;
-    }
-
-    .page-title h1{
-        font-size:22px;
-    }
-
-    .category-content h3{
-        font-size:18px;
-    }
-
-    .category-icon{
-        width:60px;
-        height:60px;
-    }
+.image-placeholder img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
 }
