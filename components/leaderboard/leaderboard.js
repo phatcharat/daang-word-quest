@@ -14,7 +14,9 @@ async function initLeaderboardScreen() {
   document
     .querySelectorAll(".nav-item")
     .forEach((btn) => btn.classList.remove("active"));
-  document.querySelector('[data-nav="leaderboard"]')?.classList.add("active");
+  document
+  .querySelector('[onclick="navigateTo(\'leaderboard\')"]')
+  ?.classList.add("active");
 
   const uid = auth.currentUser?.uid;
   const listBox = document.getElementById("leaderboard-list-box");

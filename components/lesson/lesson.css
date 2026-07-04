@@ -1,7 +1,10 @@
 /* HEADER */
 
 .lesson-header {
-    gap: 12px;
+    padding-top: calc(var(--safe-top) + 20px);
+    padding-right: 24px;
+    padding-bottom: 20px;
+    padding-left: 24px;
 }
 
 .lesson-header .page-title {

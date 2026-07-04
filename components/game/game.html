@@ -106,30 +106,25 @@
                 </button>
             </div>
 
+            <!-- Bottom Nav -->
             <div class="bottom-nav">
-                <button
-                    class="nav-item"
-                    onclick="
-                        window.location.href = '../leaderboard/leaderboard.html'
-                    "
-                >
+
+                <button class="nav-item" onclick="navigateTo('leaderboard')">
                     <i class="fas fa-trophy"></i>
                 </button>
-                <button
-                    class="nav-item active"
-                    onclick="window.location.href = '../home/home.html'"
-                >
+
+                <button class="nav-item active" onclick="navigateTo('home')">
                     <i class="fas fa-home"></i>
                 </button>
-                <button
-                    class="nav-item"
-                    onclick="window.location.href = '../profile/profile.html'"
-                >
+
+                <button class="nav-item" onclick="navigateTo('profile')">
                     <i class="fas fa-user"></i>
                 </button>
+
             </div>
         </div>
 
+        <script src="../../core/navigation.js"></script>
         <script src="../../core/lesson-manager.js"></script>
         <script type="module" src="game.js"></script>
     </body>

@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="../../styles/global.css" />
 
         <link rel="stylesheet" href="leaderboard.css" />
+        <link rel="stylesheet" href="../home/home.css" />
         <link rel="stylesheet" href="../shared/bottom-nav.css" />
 
         <link
@@ -25,35 +26,22 @@
     <body>
         <div class="leaderboard-page">
             <!-- 1. Header ส่วนบน (โลโก้ และสเตตัสหลอดพลัง) -->
-            <header class="lb-header">
-                <div class="lb-header-top">
-                    <div class="lb-logo">
+            <header class="home-header page-header">
+                <div class="logo-section">
+                    <div class="logo-wrapper">
                         <img
                             src="../../assets/images/DaangLogo.png"
-                            alt="DaangQuest"
-                        />
-                    </div>
-                    <div class="lb-user-stats">
-                        <span class="lb-badge-stat streak" id="lb-header-streak"
-                            >🔥 0 วัน</span
-                        >
-                        <span class="lb-badge-stat xp" id="lb-header-xp"
-                            >⚡ 0 XP</span
-                        >
+                            alt="DaangQuest">
                     </div>
                 </div>
 
-                <!-- วงกลมโปรไฟล์ซ้อนกันตามรูป -->
-                <div class="lb-avatar-row">
-                    <div class="lb-avatar-container">
-                        <img
-                            src="https://api.dicebear.com/7.x/adventurer/svg?seed=Mark"
-                            alt="User Avatar"
-                            class="lb-profile-img"
-                        />
-                        <div class="lb-profile-letter" id="lb-avatar-letter">
-                            ?
-                        </div>
+                <div class="user-stats">
+                    <div class="stat fire">
+                        🔥 1 วัน
+                    </div>
+
+                    <div class="stat xp">
+                        ⚡ 1000 XP
                     </div>
                 </div>
             </header>
@@ -88,35 +76,23 @@
 
             <!-- Bottom Nav -->
             <div class="bottom-nav">
-                <button
-                    class="nav-item"
-                    data-nav="leaderboard"
-                    onclick="
-                        window.location.href = '../leaderboard/leaderboard.html'
-                    "
-                >
+
+                <button class="nav-item active" onclick="navigateTo('leaderboard')">
                     <i class="fas fa-trophy"></i>
                 </button>
 
-                <button
-                    class="nav-item"
-                    data-nav="home"
-                    onclick="window.location.href = '../home/home.html'"
-                >
+                <button class="nav-item" onclick="navigateTo('home')">
                     <i class="fas fa-home"></i>
                 </button>
 
-                <button
-                    class="nav-item"
-                    data-nav="profile"
-                    disabled
-                    title="ไม่สามารถไปหน้า Profile จากหน้า Leaderboard ได้"
-                >
+                <button class="nav-item" onclick="navigateTo('profile')">
                     <i class="fas fa-user"></i>
                 </button>
+
             </div>
         </div>
 
+        <script src="../../core/navigation.js"></script>
         <script type="module" src="leaderboard.js"></script>
     </body>
 </html>

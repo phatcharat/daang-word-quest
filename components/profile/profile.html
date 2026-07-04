@@ -25,15 +25,13 @@
 
     <body>
         <div class="profile-page-container">
-            <!-- ===================================================
-            📱 [MODE 1] หน้าจอแสดงโปรไฟล์หลัก (View Mode)
-            =================================================== -->
+
             <div id="profile-main-view" class="profile-sub-view">
                 <!-- ส่วนหัวสีน้ำเงินด้านบน -->
                 <div class="profile-blue-banner">
                     <h2 class="profile-center-title">Profile</h2>
                     <div class="profile-avatar-circle-wrapper">
-                        <img id="prof-avatar-view" src="" alt="Woody Avatar" />
+                        <img id="prof-avatar-view" src="../../assets/images/mycattt.jpg">
                     </div>
                     <h3 id="prof-name-view" class="profile-text-name">
                         กำลังโหลด...
@@ -124,15 +122,12 @@
                 </div>
             </div>
 
-            <!-- ===================================================
-            📝 [MODE 2] หน้าจอแก้ไขข้อมูลโปรไฟล์ (Edit Mode)
-            =================================================== -->
             <div id="profile-edit-view" class="profile-sub-view hidden">
                 <div class="profile-full-blue-container">
                     <h2 class="profile-center-title">Profile</h2>
 
                     <div class="profile-avatar-circle-wrapper edit-mode-avatar">
-                        <img id="prof-avatar-edit" src="" alt="Woody Avatar" />
+                        <img id="prof-avatar-edit" src="../../assets/images/mycattt.jpg">
                         <div class="avatar-pencil-overlay-badge">
                             <i class="fa-solid fa-pencil"></i>
                         </div>
@@ -169,34 +164,25 @@
                 </div>
             </div>
 
-            <!-- ===================================================
-            🎛️ [SHARED] แถบเมนูด้านล่างทรงแคปซูลลอยกึ่งกลางจอ
-            =================================================== -->
+             <!-- Bottom Nav -->
             <div class="bottom-nav">
-                <button
-                    class="nav-item"
-                    disabled
-                    title="ไม่สามารถไปหน้า Leaderboard จากหน้า Profile ได้"
-                >
+
+                <button class="nav-item" onclick="navigateTo('leaderboard')">
                     <i class="fas fa-trophy"></i>
                 </button>
 
-                <button
-                    class="nav-item"
-                    disabled
-                    title="ไม่สามารถไปหน้า Home จากหน้า Profile ได้"
-                >
+                <button class="nav-item" onclick="navigateTo('home')">
                     <i class="fas fa-home"></i>
                 </button>
 
-                <button
-                    class="nav-item active"
-                    onclick="window.location.href = '../profile/profile.html'"
-                >
+                <button class="nav-item active" onclick="navigateTo('profile')">
                     <i class="fas fa-user"></i>
                 </button>
+
             </div>
         </div>
+
+        <script src="../../core/navigation.js"></script>
         <script src="profile.js"></script>
     </body>
 </html>
