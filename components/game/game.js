@@ -1,4 +1,4 @@
-// ===== components/game/game_4.js =====
+// ===== components/game/game.js =====
 
 import { auth } from "../../scripts/firebase.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
@@ -399,7 +399,9 @@ function showFeedback(isCorrect, isSkipped = false) {
       successBanner.style.setProperty("display", "flex", "important");
     }
   } else {
-    // ข้ามคำถือเป็นการตอบผิดด้วย นับรวif (!isSkipped) gameWrongWords.push(currentWordObj);
+    // ตอบผิดหรือข้าม ถือเป็นคำตอบผิดทั้งคู่ นับรวมเป็นคำตอบผิด
+    gameWrongWords.push(currentWordObj);
+
     if (errorBanner) {
       const titleLabel = errorBanner.querySelector("h3");
       if (titleLabel) {

@@ -2,7 +2,8 @@ import { auth, db } from "./firebase.js";
 
 import {
     signInWithEmailAndPassword,
-    createUserWithEmailAndPassword
+    createUserWithEmailAndPassword,
+    updateProfile
 }
 from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
@@ -96,6 +97,13 @@ if(signupForm){
 
             const user =
                 userCredential.user;
+
+            // จุดที่เพิ่ม: เซ็ต displayName เข้า Firebase Auth profile ของ user เองด้วย
+            // ไม่ใช่แค่เก็บใน Firestore เฉยๆ เหมือนเดิม เพื่อให้ auth.currentUser.displayName
+            // มีค่าตั้งแต่วินาทีแรกที่ล็อกอิน โดยไม่ต้องรอ query Firestore
+            await updateProfile(user, {
+                displayName: displayName
+            });
 
             await setDoc(
                 doc(db,"users",user.uid),
