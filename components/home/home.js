@@ -1,4 +1,3 @@
-
 function initHomeScreen() {
 
     // ไฮไลต์ปุ่ม Home
@@ -13,7 +12,7 @@ function initHomeScreen() {
     const spellBtn = document.getElementById("spell-btn");
 
     quizBtn?.addEventListener("click", () => {
-        navigateTo("game");
+        navigateTo("quizLesson");
     });
 
     spellBtn?.addEventListener("click", () => {

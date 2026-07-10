@@ -1,0 +1,54 @@
+.quiz-word-display {
+    font-size: 32px;
+    font-weight: 800;
+    color: #066fd1;
+    text-align: center;
+    padding: 24px 0;
+}
+
+.choice-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.choice-btn {
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 18px 12px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    cursor: pointer;
+    transition: 0.15s;
+    text-align: center;
+}
+
+.choice-btn:active {
+    transform: scale(0.97);
+}
+
+.choice-btn.correct-choice {
+    background: #dcfce7;
+    border-color: #22c55e;
+    color: #166534;
+}
+
+.choice-btn.wrong-choice {
+    background: #fee2e2;
+    border-color: #ef4444;
+    color: #991b1b;
+}
+
+.choice-btn:disabled {
+    cursor: not-allowed;
+}
+
+@media (max-width: 400px) {
+    .choice-btn {
+        font-size: 14px;
+        padding: 14px 8px;
+    }
+}

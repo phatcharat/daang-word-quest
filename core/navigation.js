@@ -15,6 +15,9 @@ function navigateTo(page) {
         case "profile":
             window.location.href = "../profile/profile.html";
             break;
+        case "quizLesson":
+            window.location.href = "../quiz-lesson/quiz-lesson.html";
+            break;
     }
 }
 window.navigateTo = navigateTo;

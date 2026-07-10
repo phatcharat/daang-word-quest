@@ -158,11 +158,6 @@ async function initGameScreen() {
     return;
   }
 
-  const catSpan = document.getElementById("current-category");
-  if (catSpan) {
-    catSpan.innerText = categoryTitleMap[currentCategory] || currentCategory;
-  }
-
   // รอให้ Firebase Auth คืนสถานะก่อน เพื่อให้ได้ uid ที่ถูกต้องจริง ๆ
   const user = await waitForAuthUser();
   currentUid = user?.uid || null;
@@ -260,6 +255,12 @@ function loadQuestion() {
   }
 
   currentWordObj = currentQuestions[currentIndex];
+
+  // แสดงชื่อคำศัพท์ภาษาไทยแทนคำว่า "รูปภาพ" ที่ตำแหน่งบนกลางของการ์ด
+  const wordTitleEl = document.getElementById("current-word-title");
+  if (wordTitleEl && currentWordObj) {
+    wordTitleEl.innerText = currentWordObj.thai || "";
+  }
 
   const progressText = document.querySelector(".progress-text");
   if (progressText)
@@ -470,6 +471,7 @@ async function finishLesson() {
   }
 
   const resultPayload = {
+    mode: "spelling",
     category: currentCategory,
     categoryName: categoryTitleMap[currentCategory] || currentCategory,
     lessonId: currentLessonId,

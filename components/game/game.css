@@ -252,38 +252,34 @@
     font-weight: 600;
 }
 
-/* ===== การ์ดดีไซน์ใหม่สไตล์เดียวกันกับหน้าเลือกหมวดหมู่ล่าสุด ===== */
 .word-card-new-theme {
     position: relative;
-    margin: 16px 24px 24px 0px; /* เว้นขวาไว้ให้ไอคอนลอยหลุดออกไป */
+    margin: 16px 24px 24px 24px; /* ระยะห่างเท่ากันทั้งสองข้าง ให้การ์ดอยู่กลางจอจริงๆ */
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-/* กล่องเนื้อหาหลัก: บีบเว้าโค้งฝั่งซ้ายเหมือนรูปหมวดหมู่ */
+/* กล่องเนื้อหาหลัก: โค้งเท่ากันทุกมุม เพราะไม่มีไอคอนลอยฝั่งขวาแล้ว */
 .card-content-wrapper {
-    flex: 1;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
     background: white;
-    border-radius: 40px 24px 24px 40px; /* โค้งฝั่งซ้ายมนเป็นพิเศษ */
-    padding: 24px 40px 24px 24px;
+    border-radius: 24px;
+    padding: 24px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     border: 1px solid #eaeaea;
     z-index: 1;
+    text-align: center;
 }
 
-.category-indicator h2 {
+.current-word-title {
     font-size: 24px;
     font-weight: 800;
     color: #2d3748;
-    margin: 0 0 4px 0;
-    text-align: left; /* เยื้องซ้ายตามธีมใหม่ */
-}
-
-.category-indicator p {
-    font-size: 13px;
-    color: #718096;
     margin: 0 0 16px 0;
-    text-align: left;
+    text-align: center;
 }
 
 .image-placeholder {

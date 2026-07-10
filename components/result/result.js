@@ -61,12 +61,16 @@ function initResultScreen() {
   renderBadges("qsCorrectBadges", correctWords, "badge-green");
   renderBadges("qsWrongBadges", wrongWords, "badge-red");
 
+  const mode = result.mode === "quiz" ? "quiz" : "spelling";
+
   document.getElementById("qsRetryBtn")?.addEventListener("click", () => {
-    window.location.href = "../game/game.html";
+    window.location.href =
+      mode === "quiz" ? "../quiz/quiz.html" : "../game/game.html";
   });
 
   document.getElementById("qsBackBtn")?.addEventListener("click", () => {
-    window.location.href = "../lesson/lesson.html";
+    window.location.href =
+      mode === "quiz" ? "../quiz-lesson/quiz-lesson.html" : "../lesson/lesson.html";
   });
 }
 

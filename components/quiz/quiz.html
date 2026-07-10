@@ -6,14 +6,14 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0, viewport-fit=cover"
         />
-
-        <title>Game</title>
+        <title>Quiz 4 ตัวเลือก</title>
 
         <link rel="stylesheet" href="../../styles/reset.css" />
         <link rel="stylesheet" href="../../styles/variables.css" />
         <link rel="stylesheet" href="../../styles/global.css" />
 
-        <link rel="stylesheet" href="game.css" />
+        <link rel="stylesheet" href="../game/game.css" />
+        <link rel="stylesheet" href="quiz.css" />
         <link rel="stylesheet" href="../shared/bottom-nav.css" />
 
         <link
@@ -27,9 +27,9 @@
             <header class="game-header">
                 <div class="header-left">
                     <span class="mode-icon"
-                        ><i class="fa-solid fa-pen"></i
+                        ><i class="fa-solid fa-list-check"></i
                     ></span>
-                    <span class="mode-title">สะกดคำ</span>
+                    <span class="mode-title">Quiz 4 ตัวเลือก</span>
                 </div>
                 <div class="header-right">
                     <span class="stat-badge xp-badge" id="header-xp-badge"
@@ -53,37 +53,18 @@
 
                 <div class="word-card-new-theme">
                     <div class="card-content-wrapper">
-                        <h2 class="current-word-title" id="current-word-title"></h2>
-                        <div class="image-placeholder"></div>
+                        <div class="image-placeholder" id="quiz-image-placeholder"></div>
+                        <div class="quiz-word-display hidden" id="quiz-word-display"></div>
                     </div>
                 </div>
 
-                <p class="input-hint">พิมพ์คำภาษาดาราอางจากภาพที่เห็น</p>
-                <div class="input-container">
-                    <input
-                        type="text"
-                        id="answer-input"
-                        placeholder="พิมพ์คำตอบที่นี่..."
-                        autocomplete="off"
-                    />
-                </div>
-
-                <div class="action-buttons">
-                    <button class="btn btn-check" id="btn-check">
-                        ตรวจคำตอบ <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                    <button class="btn btn-skip" id="btn-skip">
-                        ข้ามคำนี้ <i class="fa-solid fa-share"></i>
-                    </button>
-                </div>
+                <div class="choice-grid" id="choice-grid"></div>
             </div>
 
             <div class="feedback-banner success hidden" id="feedback-success">
                 <div class="feedback-content">
-                    <h3>
-                        <i class="fa-solid fa-circle-check"></i> ถูกต้อง! +10 XP
-                    </h3>
-                    <p>ภาพที่เห็นสะกดว่า "cat"</p>
+                    <h3><i class="fa-solid fa-circle-check"></i> ถูกต้อง! +10 XP</h3>
+                    <p></p>
                 </div>
                 <button class="btn-next">
                     คำต่อไป <i class="fa-solid fa-arrow-right"></i>
@@ -92,36 +73,15 @@
 
             <div class="feedback-banner error hidden" id="feedback-error">
                 <div class="feedback-content">
-                    <h3>
-                        <i class="fa-solid fa-circle-xmark"></i> ไม่ถูกต้อง!
-                    </h3>
-                    <p>คำตอบที่ถูกต้องคือ "cat"</p>
+                    <h3><i class="fa-solid fa-circle-xmark"></i> ไม่ถูกต้อง!</h3>
+                    <p></p>
                 </div>
                 <button class="btn-next error-btn">
                     ต่อไป <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
 
-            <!-- Bottom Nav -->
-            <div class="bottom-nav">
-
-                <button class="nav-item" onclick="navigateTo('leaderboard')">
-                    <i class="fas fa-trophy"></i>
-                </button>
-
-                <button class="nav-item active" onclick="navigateTo('home')">
-                    <i class="fas fa-home"></i>
-                </button>
-
-                <button class="nav-item" onclick="navigateTo('profile')">
-                    <i class="fas fa-user"></i>
-                </button>
-
-            </div>
-        </div>
-
-        <script src="../../core/navigation.js"></script>
-        <script src="../../core/lesson-manager.js"></script>
-        <script type="module" src="game.js"></script>
+        <script src="../../core/quiz-manager.js"></script>
+        <script type="module" src="quiz.js"></script>
     </body>
 </html>
