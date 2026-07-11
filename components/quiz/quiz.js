@@ -170,6 +170,7 @@ function checkAnswer(selectedValue, btnEl) {
 }
 
 function showFeedback(isCorrect, correctValue) {
+  showFeedbackBackdrop();
   const successBanner = document.getElementById("feedback-success");
   const errorBanner = document.getElementById("feedback-error");
 
@@ -199,6 +200,25 @@ function showFeedback(isCorrect, correctValue) {
   }
 }
 
+function ensureFeedbackBackdrop() {
+  let backdrop = document.getElementById("feedback-backdrop");
+  if (!backdrop) {
+    backdrop = document.createElement("div");
+    backdrop.id = "feedback-backdrop";
+    backdrop.className = "feedback-backdrop";
+    document.body.appendChild(backdrop);
+  }
+  return backdrop;
+}
+
+function showFeedbackBackdrop() {
+  ensureFeedbackBackdrop().classList.add("show");
+}
+
+function hideFeedbackBackdrop() {
+  document.getElementById("feedback-backdrop")?.classList.remove("show");
+}
+
 function hideBanners() {
   const successBanner = document.getElementById("feedback-success");
   const errorBanner = document.getElementById("feedback-error");
@@ -210,6 +230,7 @@ function hideBanners() {
     errorBanner.classList.add("hidden");
     errorBanner.style.display = "none";
   }
+  hideFeedbackBackdrop();
 }
 
 function setupNextButtons() {

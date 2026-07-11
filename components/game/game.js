@@ -59,16 +59,16 @@ function injectQuizPopupStyles() {
            =================================================== */
         #feedback-success, #feedback-error {
             position: fixed !important;
-            bottom: 30px !important;
+            top: 50% !important;
             left: 50% !important;
-            transform: translateX(-50%) !important;
+            transform: translate(-50%, -50%) !important;
             width: 90% !important;
-            max-width: 500px !important;
+            max-width: 380px !important;
             background: #FFFFFF !important;
             border: 1px solid #EAEAEA !important;
             border-radius: 24px !important;
             padding: 24px !important;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15) !important;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25) !important;
             box-sizing: border-box !important;
             z-index: 99999 !important;
             flex-direction: column !important;
@@ -142,6 +142,39 @@ function injectQuizPopupStyles() {
         }
     `;
   document.head.appendChild(styleTag);
+}
+// สร้าง/ดึง element สำหรับเบลอพื้นหลังตอนแสดงกรอบเฉลย
+function ensureFeedbackBackdrop() {
+  let backdrop = document.getElementById("feedback-backdrop");
+  if (!backdrop) {
+    backdrop = document.createElement("div");
+    backdrop.id = "feedback-backdrop";
+    backdrop.className = "feedback-backdrop";
+    document.body.appendChild(backdrop);
+  }
+  return backdrop;
+}
+
+function showFeedbackBackdrop() {
+  ensureFeedbackBackdrop().classList.add("show");
+}
+
+function hideFeedbackBackdrop() {
+  document.getElementById("feedback-backdrop")?.classList.remove("show");
+}
+
+function hideBanners() {
+  const successBanner = document.getElementById("feedback-success");
+  const errorBanner = document.getElementById("feedback-error");
+  if (successBanner) {
+    successBanner.classList.add("hidden");
+    successBanner.style.display = "none";
+  }
+  if (errorBanner) {
+    errorBanner.classList.add("hidden");
+    errorBanner.style.display = "none";
+  }
+  hideFeedbackBackdrop();
 }
 
 // 1. ฟังก์ชันเริ่มต้นโหลดหน้าเกมสะกดคำศัพท์ โดยใช้บทเรียนที่ผู้ใช้เลือกจากหน้า Lesson
@@ -241,6 +274,7 @@ function loadQuestion() {
     errorBanner.classList.add("hidden");
     errorBanner.style.display = "none";
   }
+  hideFeedbackBackdrop();
 
   const btnCheck = document.getElementById("btn-check");
   const btnSkip = document.getElementById("btn-skip");
@@ -374,6 +408,7 @@ function setupGameEventListeners() {
 
 // 5. ฟังก์ชันแสดงแบนเนอร์แจ้งผลลัพธ์ ถูก/ผิด
 function showFeedback(isCorrect, isSkipped = false) {
+  showFeedbackBackdrop();
   const successBanner = document.getElementById("feedback-success");
   const errorBanner = document.getElementById("feedback-error");
 
@@ -388,7 +423,7 @@ function showFeedback(isCorrect, isSkipped = false) {
 
       const textLabel = successBanner.querySelector("p");
       if (textLabel) {
-        textLabel.innerHTML = `ถูกต้อง! ภาษาดาอางคือ <strong>"${currentWordObj.daang.trim()}"</strong> [${currentWordObj.thai.trim()}]`;
+        textLabel.innerHTML = `ภาษาดาอางคือ <strong>"${currentWordObj.daang.trim()}"</strong> [${currentWordObj.thai.trim()}]`;
       }
 
       const btnNext = successBanner.querySelector(".btn-next");

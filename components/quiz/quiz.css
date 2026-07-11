@@ -52,3 +52,38 @@
         padding: 14px 8px;
     }
 }
+
+/* ===== Feedback Card (ให้ธีมตรงกับหน้าสะกดคำ: การ์ดขาวลอยกลางจอ) ===== */
+#feedback-success,
+#feedback-error {
+    background: #FFFFFF !important;
+    border: 1px solid #EAEAEA !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25) !important;
+}
+
+#feedback-success h3 {
+    color: #22C55E;
+}
+#feedback-error h3 {
+    color: #EF4444;
+}
+
+#feedback-success p,
+#feedback-error p {
+    color: #4A5568;
+    font-size: 14px;
+    line-height: 1.5;
+}
+#feedback-success p strong,
+#feedback-error p strong {
+    color: #1A202C;
+}
+
+#feedback-success .btn-next {
+    background: #22C55E !important;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.2) !important;
+}
+#feedback-error .btn-next {
+    background: #EF4444 !important;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2) !important;
+}
