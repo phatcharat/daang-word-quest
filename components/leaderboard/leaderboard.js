@@ -69,7 +69,7 @@ async function renderMyStats(uid, topUsers) {
     const profile = await getUserProfile(uid);
     if (!profile) return;
 
-    rank = await getUserRank(profile.xp || 0);
+    rank = await getUserRank(profile.xp || 0, uid);
     me = {
       name: profile.displayName || profile.email || "ฉัน",
       xp: profile.xp || 0,

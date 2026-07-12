@@ -1,7 +1,10 @@
 // ===== components/profile/profile.js =====
 
 import { auth } from "../../scripts/firebase.js";
-import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+import {
+  onAuthStateChanged,
+  signOut,
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 import { getUserProfile } from "../../scripts/services/user-service.js";
 import { getUserRank } from "../../scripts/services/leaderboard-service.js";
 import { computeDisplayStreak } from "../../scripts/services/streak-service.js";
@@ -60,7 +63,7 @@ async function loadFirestoreStats(uid) {
       profile.lastPlayedDate ?? null,
     );
 
-    window.appState.user.rank = await getUserRank(profile.xp || 0);
+    window.appState.user.rank = await getUserRank(profile.xp || 0, uid);
 
     renderUpdatedProfileData();
   } catch (err) {
@@ -123,11 +126,16 @@ function saveProfileChangesData() {
   console.log("💾 บันทึกการเปลี่ยนแปลงโปรไฟล์เรียบร้อยแล้ว! (ยังไม่เขียนกลับ Firestore/Auth)");
 }
 
-function handleLogoutAction() {
+async function handleLogoutAction() {
   const conf = confirm("คุณต้องการออกจากระบบใช่หรือไม่?");
-  if (conf) {
-    alert("ออกจากระบบเสร็จสิ้น");
-    navigateTo("home");
+  if (!conf) return;
+
+  try {
+    await signOut(auth);
+    window.location.href = "../login/login.html";
+  } catch (err) {
+    console.error("ออกจากระบบไม่สำเร็จ:", err);
+    alert("เกิดข้อผิดพลาด ไม่สามารถออกจากระบบได้ กรุณาลองใหม่อีกครั้ง");
   }
 }
 

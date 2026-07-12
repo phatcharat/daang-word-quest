@@ -9,11 +9,19 @@ import {
   getDocs,
   where,
   getCountFromServer,
+  documentId,
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
 // ดึงผู้เล่นอันดับต้น ๆ เรียงตาม XP มากไปน้อย
+// ถ้า XP เท่ากัน ใช้ uid (documentId) เป็นตัวตัดสินรอง เพื่อให้ลำดับ "คงที่" ทุกครั้งที่โหลด
+// (สำคัญ: ต้องใช้ลำดับเดียวกันเป๊ะกับ getUserRank() ด้านล่าง ไม่งั้นอันดับจะขัดกันเอง)
 export async function getTopUsers(topN = 20) {
-  const q = query(collection(db, "users"), orderBy("xp", "desc"), limit(topN));
+  const q = query(
+    collection(db, "users"),
+    orderBy("xp", "desc"),
+    orderBy(documentId(), "asc"),
+    limit(topN)
+  );
   const snap = await getDocs(q);
 
   return snap.docs.map((docSnap, index) => {
@@ -30,9 +38,21 @@ export async function getTopUsers(topN = 20) {
 }
 
 // หาลำดับอันดับจริงของผู้ใช้ (เผื่อกรณีไม่ติดอยู่ในลิสต์ topN)
-// อันดับ = จำนวนคนที่ XP มากกว่าเรา + 1
-export async function getUserRank(xp) {
-  const q = query(collection(db, "users"), where("xp", ">", xp || 0));
-  const snap = await getCountFromServer(q);
-  return snap.data().count + 1;
+// อันดับ = (จำนวนคนที่ XP มากกว่าเรา) + (จำนวนคนที่ XP เท่ากันแต่ uid มาก่อนเรา ตาม tie-break เดียวกับ getTopUsers) + 1
+export async function getUserRank(xp, uid) {
+  const higherQ = query(collection(db, "users"), where("xp", ">", xp || 0));
+  const higherSnap = await getCountFromServer(higherQ);
+
+  let tieCount = 0;
+  if (uid) {
+    const tieQ = query(
+      collection(db, "users"),
+      where("xp", "==", xp || 0),
+      where(documentId(), "<", uid)
+    );
+    const tieSnap = await getCountFromServer(tieQ);
+    tieCount = tieSnap.data().count;
+  }
+
+  return higherSnap.data().count + tieCount + 1;
 }
