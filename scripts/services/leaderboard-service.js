@@ -24,6 +24,7 @@ export async function getTopUsers(topN = 20) {
       name: data.displayName || data.email || "ผู้เล่นนิรนาม",
       xp: data.xp || 0,
       streak: data.streak || 0,
+      lastPlayedDate: data.lastPlayedDate || null,
     };
   });
 }

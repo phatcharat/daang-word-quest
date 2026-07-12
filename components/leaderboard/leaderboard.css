@@ -1,78 +1,13 @@
 .leaderboard-page {
     background-color: #f8fafc;
     min-height: 100vh;
-    padding-bottom: 100px; /* เว้นระยะไม่ให้เมนูล่างบังข้อมูล */
+    padding-bottom: 190px; /* เว้นระยะให้แถบ sticky + bottom-nav ไม่บังข้อมูล */
     box-sizing: border-box;
-}
-
-/* Header & Avatar Row */
-.lb-header {
-    background-color: #ffffff;
-    padding: 16px 20px;
-    border-bottom: 1px solid #e2e8f0;
-}
-.lb-header-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.lb-logo img {
-    height: 32px;
-}
-.lb-user-stats {
-    display: flex;
-    gap: 8px;
-}
-.lb-badge-stat {
-    font-size: 12px;
-    font-weight: bold;
-    padding: 4px 12px;
-    border-radius: 20px;
-}
-.lb-badge-stat.streak {
-    background-color: #ffedd5;
-    color: #ea580c;
-}
-.lb-badge-stat.xp {
-    background-color: #e0e7ff;
-    color: #4f46e5;
-}
-.lb-avatar-row {
-    display: flex;
-    justify-content: center;
-    margin-top: 12px;
-}
-.lb-avatar-container {
-    position: relative;
-    display: inline-block;
-}
-.lb-profile-img {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: 2px solid #e2e8f0;
-    background: #f1f5f9;
-}
-.lb-profile-letter {
-    position: absolute;
-    right: -10px;
-    bottom: 2px;
-    width: 24px;
-    height: 24px;
-    background-color: #066fd1;
-    color: #ffffff;
-    font-size: 12px;
-    font-weight: bold;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid #ffffff;
 }
 
 /* Title Section */
 .lb-title-section {
-    padding: 20px 24px 10px 24px;
+    padding: calc(env(safe-area-inset-top, 0px) + 24px) 24px 10px 24px;
 }
 .lb-title-section h1 {
     font-size: 24px;
@@ -107,7 +42,7 @@
     text-align: center;
 }
 .lb-card.xp-card {
-    background-color: #b4c6fc; /* ไฮไลต์ม่วงฝั่งขวา */
+    background-color: #b4c6fc;
     border: none;
 }
 .lb-card-medal {
@@ -151,12 +86,22 @@
     border-bottom: none;
 }
 
-/* 🌟 แถวไฮไลต์ของตัวเองตามรูปภาพต้นฉบับ */
-/* ฯองคียนไหลตของตัวเองตามรูปภาพต้นฉบับ */
+/* 🟩 แถวไฮไลต์ของตัวเอง (กรอบเขียว) */
 .lb-row.row-highlight {
-    background-color: #b4c6fc;
+    background-color: #e8f5e9;
+    border: 2px solid #16a34a;
     border-radius: 14px;
-    border-bottom: none;
+}
+.lb-row.row-highlight .lb-name {
+    color: #14532d;
+}
+.lb-row.row-highlight .lb-streak {
+    color: #15803d;
+}
+.lb-row.row-highlight .lb-xp-pill {
+    background: #16a34a;
+    color: #ffffff;
+    border: none;
 }
 
 .lb-empty-state {
@@ -198,9 +143,6 @@
     color: #64748b;
     font-weight: 500;
 }
-.lb-row.row-highlight .lb-streak {
-    color: #4338ca;
-}
 
 /* ฝั่งคะแนนขวา */
 .lb-xp-pill {
@@ -212,8 +154,47 @@
     border-radius: 20px;
     border: 1px solid #e2e8f0;
 }
-.lb-row.row-highlight .lb-xp-pill {
+
+/* 📌 แถบลอย (sticky) แสดงอันดับผู้เล่นเองเมื่อหลุด Top 20 */
+.lb-sticky-user {
+    position: fixed;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 48px);
+    max-width: 420px;
+    background: #e8f5e9;
+    border: 2px solid #16a34a;
+    border-radius: 16px;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    z-index: 998;
+}
+.lb-sticky-rank {
+    font-weight: 800;
+    color: #15803d;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+.lb-sticky-name {
+    flex: 1;
+    font-weight: 700;
+    color: #14532d;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.lb-sticky-xp {
+    font-weight: 800;
+    color: #16a34a;
+    font-size: 13px;
     background: #ffffff;
-    color: #4f46e5;
-    border: none;
+    padding: 4px 10px;
+    border-radius: 20px;
+    flex-shrink: 0;
 }

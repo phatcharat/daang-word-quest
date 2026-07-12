@@ -4,6 +4,9 @@ import { auth } from "../../scripts/firebase.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 import { saveIfBetter } from "../../scripts/services/lesson-progress-service.js";
 import { getUserProfile } from "../../scripts/services/user-service.js";
+import { saveIfBetter } from "../../scripts/services/lesson-progress-service.js";
+import { getUserProfile } from "../../scripts/services/user-service.js";
+import { recordPlaySession } from "../../scripts/services/streak-service.js";
 
 // ตัวป้องกันแอปพัง: ตรวจสอบและสร้าง appState สำรองไว้เสมอกันสคริปต์หยุดทำงาน
 window.appState = window.appState || {};
@@ -497,6 +500,9 @@ async function finishLesson() {
         },
       );
       xpAwarded = saveResult.xpAwarded;
+
+      // นับ Streak ทันทีที่จบบทเรียน ไม่ว่าคะแนนจะเท่าไหร่ก็ตาม
+      await recordPlaySession(currentUid);
 
       const profile = await getUserProfile(currentUid);
       totalXp = profile?.xp ?? null;

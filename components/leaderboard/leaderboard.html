@@ -14,7 +14,6 @@
         <link rel="stylesheet" href="../../styles/global.css" />
 
         <link rel="stylesheet" href="leaderboard.css" />
-        <link rel="stylesheet" href="../home/home.css" />
         <link rel="stylesheet" href="../shared/bottom-nav.css" />
 
         <link
@@ -25,34 +24,14 @@
 
     <body>
         <div class="leaderboard-page">
-            <!-- 1. Header ส่วนบน (โลโก้ และสเตตัสหลอดพลัง) -->
-            <header class="home-header page-header">
-                <div class="logo-section">
-                    <div class="logo-wrapper">
-                        <img
-                            src="../../assets/images/DaangLogo.png"
-                            alt="DaangQuest">
-                    </div>
-                </div>
 
-                <div class="user-stats">
-                    <div class="stat fire">
-                        🔥 1 วัน
-                    </div>
-
-                    <div class="stat xp">
-                        ⚡ 1000 XP
-                    </div>
-                </div>
-            </header>
-
-            <!-- 2. ส่วนหัวข้อหลัก -->
+            <!-- 1. ส่วนหัวข้อหลัก -->
             <section class="lb-title-section">
                 <h1>Leaderboard 🏆</h1>
                 <p>อันดับประจำสัปดาห์</p>
             </section>
 
-            <!-- 3. การ์ดสรุปอันดับและคะแนนของตัวเอง (2 ฝั่งแยกสี) -->
+            <!-- 2. การ์ดสรุปอันดับและคะแนนของตัวเอง (2 ฝั่งแยกสี) -->
             <section class="lb-summary-cards">
                 <div class="lb-card rank-card">
                     <span class="lb-card-medal">🏅</span>
@@ -67,12 +46,19 @@
                 </div>
             </section>
 
-            <!-- 4. รายการตารางอันดับกระดานคะแนน (รอโหลดข้อมูลจาก JS) -->
+            <!-- 3. รายการตารางอันดับกระดานคะแนน (Top 20) -->
             <section class="lb-list-section">
                 <div id="leaderboard-list-box" class="lb-list-box">
                     <!-- แถวรายชื่อจะถูกพ่นออกมาตรงนี้โดยอัตโนมัติ -->
                 </div>
             </section>
+
+            <!-- 4. แถบลอยแสดงอันดับผู้เล่นเอง (โชว์เฉพาะตอนอันดับหลุด Top 20) -->
+            <div id="lb-sticky-user" class="lb-sticky-user hidden">
+                <span class="lb-sticky-rank" id="lb-sticky-rank">#-</span>
+                <span class="lb-sticky-name" id="lb-sticky-name">คุณ</span>
+                <span class="lb-sticky-xp" id="lb-sticky-xp">0 XP</span>
+            </div>
 
             <!-- Bottom Nav -->
             <div class="bottom-nav">

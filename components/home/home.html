@@ -31,19 +31,18 @@
             </div>
 
             <div class="user-stats">
-                <div class="stat fire">
-                    🔥 1 วัน
+                <div class="stat fire" id="home-fire-stat">
+                    🔥 0 วัน
                 </div>
-
-                <div class="stat xp">
-                    ⚡ 1000 XP
+                <div class="stat xp" id="home-xp-stat">
+                    ⚡ 0 XP
                 </div>
             </div>
         </header>
 
         <!-- Welcome -->
         <section class="welcome-section">
-            <h1>Hello, User 👋🏻</h1>
+            <h1>Hello, <span id="home-greet-name">User</span> 👋🏻</h1>
             <p>Glad you're back, Let's keep training! 🌟</p>
         </section>
 
@@ -95,7 +94,7 @@
 
     <script src="../../core/lesson-manager.js"></script>
     <script src="../../core/navigation.js"></script>
-    <script src="home.js"></script>
+    <script type="module" src="home.js"></script>
 
 </body>
 </html>

@@ -3,6 +3,8 @@
 import { auth } from "../../scripts/firebase.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 import { getUserProfile } from "../../scripts/services/user-service.js";
+import { getUserRank } from "../../scripts/services/leaderboard-service.js";
+import { computeDisplayStreak } from "../../scripts/services/streak-service.js";
 
 window.appState = window.appState || {};
 
@@ -52,8 +54,14 @@ async function loadFirestoreStats(uid) {
     const profile = await getUserProfile(uid);
     if (!profile) return;
 
-    window.appState.user.streak = profile.streak ?? 0;
-    // ยังไม่มีระบบคำนวณ rank จริงในหน้านี้ (ต้องใช้ getUserRank แบบหน้า leaderboard ถ้าต้องการ)
+    // ใช้ computeDisplayStreak เหมือนหน้าอื่น ๆ กันเคสขาดช่วงเล่นแล้วค่ายังค้างของเก่า
+    window.appState.user.streak = computeDisplayStreak(
+      profile.streak ?? 0,
+      profile.lastPlayedDate ?? null,
+    );
+
+    window.appState.user.rank = await getUserRank(profile.xp || 0);
+
     renderUpdatedProfileData();
   } catch (err) {
     console.error("โหลดสถิติ (streak/rank) จาก Firestore ไม่สำเร็จ:", err);

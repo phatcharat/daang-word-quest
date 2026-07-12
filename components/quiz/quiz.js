@@ -4,6 +4,7 @@ import { auth } from "../../scripts/firebase.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 import { saveQuizIfBetter } from "../../scripts/services/quiz-progress-service.js";
 import { getUserProfile } from "../../scripts/services/user-service.js";
+import { recordPlaySession } from "../../scripts/services/streak-service.js";
 
 window.appState = window.appState || {};
 
@@ -279,6 +280,9 @@ async function finishQuiz() {
         total,
       });
       xpAwarded = saveResult.xpAwarded;
+
+      // นับ Streak ทันทีที่จบ Quiz ไม่ว่าคะแนนจะเท่าไหร่ก็ตาม
+      await recordPlaySession(currentUid);
 
       const profile = await getUserProfile(currentUid);
       totalXp = profile?.xp ?? null;
