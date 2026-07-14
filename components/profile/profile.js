@@ -4,14 +4,24 @@ import { auth } from "../../scripts/firebase.js";
 import {
   onAuthStateChanged,
   signOut,
+  updateProfile,
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+import {
+  doc,
+  setDoc,
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+import { db } from "../../scripts/firebase.js";
 import { getUserProfile } from "../../scripts/services/user-service.js";
 import { getUserRank } from "../../scripts/services/leaderboard-service.js";
 import { computeDisplayStreak } from "../../scripts/services/streak-service.js";
+import {
+  AVATAR_LIST,
+  DEFAULT_AVATAR_ID,
+  getAvatarById,
+  saveAvatarSelection,
+} from "../../scripts/services/avatar-service.js";
 
 window.appState = window.appState || {};
-
-const DEFAULT_AVATAR = "../../assets/images/mycattt.jpg";
 
 function waitForAuthUser() {
   return new Promise((resolve) => {
@@ -25,11 +35,10 @@ function waitForAuthUser() {
 async function initProfileScreen() {
   console.log("👤 ระบบหน้า Profile พร้อมทำงานแล้ว!");
 
-  // Skeleton กันจอว่างระหว่างรอ auth
   window.appState.user = window.appState.user || {
     name: "กำลังโหลด...",
     email: "...",
-    avatar: DEFAULT_AVATAR,
+    avatarId: DEFAULT_AVATAR_ID,
     streak: 0,
     rank: 0,
   };
@@ -40,15 +49,10 @@ async function initProfileScreen() {
   const user = await waitForAuthUser();
   if (!user) return; // auth-guard จะจัดการ redirect ไป login เอง
 
-  // 🚀 จุดสำคัญ: ชื่อ/รูป/อีเมล มาจาก auth.currentUser โดยตรง
-  // ไม่ต้องรอ Firestore round-trip เลย ทำให้ขึ้นแทบจะทันทีที่ auth พร้อม
   window.appState.user.name = user.displayName || user.email || "ผู้ใช้";
   window.appState.user.email = user.email || "";
-  window.appState.user.avatar = user.photoURL || DEFAULT_AVATAR;
   renderUpdatedProfileData();
 
-  // ส่วน streak/rank ยังต้องพึ่ง Firestore แต่ไม่บล็อกการแสดงชื่อ/อีเมลด้านบนแล้ว
-  // (ทำงานเบื้องหลัง อัปเดตหน้าจออีกทีเมื่อโหลดเสร็จ)
   loadFirestoreStats(user.uid);
 }
 
@@ -57,43 +61,78 @@ async function loadFirestoreStats(uid) {
     const profile = await getUserProfile(uid);
     if (!profile) return;
 
-    // ใช้ computeDisplayStreak เหมือนหน้าอื่น ๆ กันเคสขาดช่วงเล่นแล้วค่ายังค้างของเก่า
+    window.appState.user.avatarId = profile.avatarId || DEFAULT_AVATAR_ID;
+
     window.appState.user.streak = computeDisplayStreak(
       profile.streak ?? 0,
       profile.lastPlayedDate ?? null,
     );
 
-    window.appState.user.rank = await getUserRank(profile.xp || 0, uid);
+    window.appState.user.rank = await getUserRank(profile.xp || 0, profile.createdAt || null);
 
     renderUpdatedProfileData();
   } catch (err) {
-    console.error("โหลดสถิติ (streak/rank) จาก Firestore ไม่สำเร็จ:", err);
+    console.error("โหลดสถิติ (avatar/streak/rank) จาก Firestore ไม่สำเร็จ:", err);
   }
+}
+
+function renderAvatarCircle(containerEl, avatarId) {
+  if (!containerEl) return;
+  const avatarData = getAvatarById(avatarId);
+  containerEl.innerHTML = `
+    <div class="avatar-emoji-circle" style="background:${avatarData.color};">
+      ${avatarData.emoji}
+    </div>
+  `;
+}
+
+function renderAvatarPicker(selectedId) {
+  const grid = document.getElementById("avatar-picker-grid");
+  if (!grid) return;
+
+  grid.innerHTML = AVATAR_LIST.map(
+    (a) => `
+      <button
+        type="button"
+        class="avatar-picker-item${a.id === selectedId ? " selected" : ""}"
+        style="background:${a.color};"
+        data-avatar-id="${a.id}"
+      >${a.emoji}</button>
+    `,
+  ).join("");
+
+  grid.querySelectorAll(".avatar-picker-item").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      selectAvatar(btn.dataset.avatarId);
+    });
+  });
+}
+
+function selectAvatar(avatarId) {
+  window.appState.user.avatarId = avatarId;
+  renderUpdatedProfileData();
 }
 
 function renderUpdatedProfileData() {
   const userData = window.appState.user;
   if (!userData) return;
 
-  const imgView = document.getElementById("prof-avatar-view");
   const nameView = document.getElementById("prof-name-view");
   const emailView = document.getElementById("prof-email-view");
   const streakVal = document.getElementById("prof-streak-val");
   const rankVal = document.getElementById("prof-rank-val");
 
-  if (imgView) imgView.src = userData.avatar;
+  renderAvatarCircle(document.getElementById("prof-avatar-view"), userData.avatarId);
+  renderAvatarCircle(document.getElementById("prof-avatar-edit"), userData.avatarId);
+  renderAvatarPicker(userData.avatarId);
+
   if (nameView) nameView.innerText = userData.name;
   if (emailView) emailView.innerText = userData.email;
   if (streakVal) streakVal.innerText = userData.streak;
   if (rankVal) rankVal.innerText = userData.rank;
 
-  const imgEdit = document.getElementById("prof-avatar-edit");
   const inputName = document.getElementById("prof-input-name");
-  const inputEmail = document.getElementById("prof-input-email");
-
-  if (imgEdit) imgEdit.src = userData.avatar;
   if (inputName) inputName.value = userData.name;
-  if (inputEmail) inputEmail.value = userData.email;
 }
 
 function toggleProfileMode(targetMode) {
@@ -109,21 +148,36 @@ function toggleProfileMode(targetMode) {
   }
 }
 
-function saveProfileChangesData() {
+async function saveProfileChangesData() {
   const inputNameVal = document.getElementById("prof-input-name")?.value;
-  const inputEmailVal = document.getElementById("prof-input-email")?.value;
 
   if (!inputNameVal || inputNameVal.trim() === "") {
     alert("กรุณากรอกชื่อผู้ใช้งาน");
     return;
   }
 
-  window.appState.user.name = inputNameVal.trim();
-  window.appState.user.email = inputEmailVal.trim();
+  const newName = inputNameVal.trim();
+  const uid = auth.currentUser?.uid;
 
+  try {
+    // 1. อัปเดต Firebase Auth profile ให้ displayName เปลี่ยนจริง
+    await updateProfile(auth.currentUser, { displayName: newName });
+
+    // 2. Sync ชื่อไป Firestore ด้วย เพื่อให้ Leaderboard แสดงชื่อใหม่ถูกต้อง
+    await setDoc(doc(db, "users", uid), { displayName: newName }, { merge: true });
+
+    // 3. Sync avatar ที่เลือกไว้ (ถ้ามีการเปลี่ยน)
+    await saveAvatarSelection(uid, window.appState.user.avatarId);
+  } catch (err) {
+    console.error("บันทึกโปรไฟล์ไม่สำเร็จ:", err);
+    alert("บันทึกโปรไฟล์ไม่สำเร็จ กรุณาลองใหม่อีกครั้ง");
+    return;
+  }
+
+  window.appState.user.name = newName;
   renderUpdatedProfileData();
   toggleProfileMode("view");
-  console.log("💾 บันทึกการเปลี่ยนแปลงโปรไฟล์เรียบร้อยแล้ว! (ยังไม่เขียนกลับ Firestore/Auth)");
+  console.log("💾 บันทึกชื่อ + Avatar ลง Firebase Auth และ Firestore เรียบร้อยแล้ว!");
 }
 
 async function handleLogoutAction() {

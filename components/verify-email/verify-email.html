@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>ยืนยันอีเมล</title>
+
+    <link rel="stylesheet" href="../../styles/variables.css">
+    <link rel="stylesheet" href="../../styles/reset.css">
+    <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="stylesheet" href="../login/login.css">
+    <link rel="stylesheet" href="verify-email.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<div class="login-container">
+
+    <div class="logo-circle">
+        <i class="fa-solid fa-envelope-circle-check" style="font-size:64px;color:#FFF;"></i>
+    </div>
+
+    <div class="ve-content">
+        <h1>ยืนยันอีเมลของคุณ</h1>
+        <p>เราได้ส่งลิงก์ยืนยันไปที่</p>
+        <p class="ve-email" id="ve-email">...</p>
+        <p class="ve-hint">กรุณาเปิดอีเมล (รวมถึงกล่อง Junk/Spam) แล้วกดลิงก์ยืนยัน จากนั้นกลับมากดปุ่ม "ฉันยืนยันแล้ว" ด้านล่าง</p>
+
+        <button id="ve-check-btn" class="ve-btn-primary">
+            ฉันยืนยันแล้ว
+        </button>
+
+        <button id="ve-resend-btn" class="ve-btn-secondary">
+            ส่งอีเมลยืนยันอีกครั้ง
+        </button>
+
+        <button id="ve-logout-btn" class="ve-btn-text">
+            ออกจากระบบ
+        </button>
+    </div>
+
+</div>
+
+<script type="module" src="verify-email.js"></script>
+
+</body>
+</html>

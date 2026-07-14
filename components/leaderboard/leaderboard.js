@@ -7,7 +7,7 @@ import {
 import { getUserProfile } from "../../scripts/services/user-service.js";
 import { computeDisplayStreak } from "../../scripts/services/streak-service.js";
 
-const TOP_N = 10;
+const TOP_N = 20;
 
 // รอให้ Firebase Auth เช็คสถานะล็อกอินเสร็จก่อน (กันปัญหา auth.currentUser เป็น null ตอนหน้าเพิ่งโหลด)
 function waitForAuthUser() {
@@ -69,7 +69,7 @@ async function renderMyStats(uid, topUsers) {
     const profile = await getUserProfile(uid);
     if (!profile) return;
 
-    rank = await getUserRank(profile.xp || 0, uid);
+    rank = await getUserRank(profile.xp || 0, profile.createdAt || null);
     me = {
       name: profile.displayName || profile.email || "ฉัน",
       xp: profile.xp || 0,
@@ -85,7 +85,6 @@ async function renderMyStats(uid, topUsers) {
   if (myRank) myRank.textContent = `${rank}`;
   if (myXp) myXp.textContent = `${me.xp} XP`;
 
-  // ถ้าอันดับเกิน Top 20 (ไม่ติดอยู่ในลิสต์ด้านล่าง) ให้โชว์แถบ sticky ลอยแทน
   const stickyBar = document.getElementById("lb-sticky-user");
   if (stickyBar) {
     if (rank > TOP_N) {

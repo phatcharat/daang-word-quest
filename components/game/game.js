@@ -4,8 +4,6 @@ import { auth } from "../../scripts/firebase.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 import { saveIfBetter } from "../../scripts/services/lesson-progress-service.js";
 import { getUserProfile } from "../../scripts/services/user-service.js";
-import { saveIfBetter } from "../../scripts/services/lesson-progress-service.js";
-import { getUserProfile } from "../../scripts/services/user-service.js";
 import { recordPlaySession } from "../../scripts/services/streak-service.js";
 
 // ตัวป้องกันแอปพัง: ตรวจสอบและสร้าง appState สำรองไว้เสมอกันสคริปต์หยุดทำงาน

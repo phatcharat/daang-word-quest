@@ -3,7 +3,8 @@ import { auth, db } from "./firebase.js";
 import {
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
-    updateProfile
+    updateProfile,
+    sendEmailVerification,
 }
 from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
@@ -14,7 +15,11 @@ import {
 }
 from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
-/* LOGIN */
+import {
+    PASSWORD_RULES,
+    getFailedRules,
+    isPasswordValid,
+} from "./utils/password-validator.js";
 
 const loginForm =
     document.getElementById("loginForm");
@@ -35,11 +40,18 @@ if(loginForm){
 
         try{
 
-            await signInWithEmailAndPassword(
+            const cred = await signInWithEmailAndPassword(
                 auth,
                 email,
                 password
             );
+
+            await cred.user.reload();
+
+            if (!cred.user.emailVerified) {
+                window.location.href = "../verify-email/verify-email.html";
+                return;
+            }
 
             window.location.href =
                 "../home/home.html";
@@ -60,6 +72,27 @@ const signupForm =
     document.getElementById("signupForm");
 
 if(signupForm){
+
+    const passwordInput = document.getElementById("password");
+    const rulesListEl = document.getElementById("password-rules");
+
+    // แสดงรายการเกณฑ์ทั้งหมดตอนโหลดหน้า (ยังไม่ติ๊กผ่านอันไหนเลย)
+    if (rulesListEl) {
+        rulesListEl.innerHTML = PASSWORD_RULES
+            .map((rule) => `<li data-rule-id="${rule.id}">${rule.label}</li>`)
+            .join("");
+    }
+
+    // อัปเดตสถานะ ✓/○ แบบเรียลไทม์ทุกครั้งที่พิมพ์
+    if (passwordInput && rulesListEl) {
+        passwordInput.addEventListener("input", () => {
+            const failedIds = getFailedRules(passwordInput.value).map((r) => r.id);
+            rulesListEl.querySelectorAll("li").forEach((li) => {
+                const ruleId = li.dataset.ruleId;
+                li.classList.toggle("valid", !failedIds.includes(ruleId));
+            });
+        });
+    }
 
     signupForm.addEventListener(
         "submit",
@@ -86,6 +119,15 @@ if(signupForm){
 
         }
 
+        // เช็คเกณฑ์รหัสผ่านก่อนยิงไป Firebase
+        if (!isPasswordValid(password)) {
+            alert(
+                "รหัสผ่านไม่ตรงตามเกณฑ์ที่กำหนด:\n" +
+                getFailedRules(password).map((r) => "• " + r.label).join("\n")
+            );
+            return;
+        }
+
         try{
 
             const userCredential =
@@ -98,9 +140,6 @@ if(signupForm){
             const user =
                 userCredential.user;
 
-            // จุดที่เพิ่ม: เซ็ต displayName เข้า Firebase Auth profile ของ user เองด้วย
-            // ไม่ใช่แค่เก็บใน Firestore เฉยๆ เหมือนเดิม เพื่อให้ auth.currentUser.displayName
-            // มีค่าตั้งแต่วินาทีแรกที่ล็อกอิน โดยไม่ต้องรอ query Firestore
             await updateProfile(user, {
                 displayName: displayName
             });
@@ -120,10 +159,12 @@ if(signupForm){
                 }
             );
 
-            alert("สมัครสมาชิกสำเร็จ");
+            await sendEmailVerification(user);
+
+            alert("สมัครสมาชิกสำเร็จ! กรุณาตรวจสอบอีเมลของคุณเพื่อยืนยันตัวตนก่อนเข้าใช้งาน");
 
             window.location.href =
-                "login.html";
+                "../verify-email/verify-email.html";
 
         }catch(error){
 
