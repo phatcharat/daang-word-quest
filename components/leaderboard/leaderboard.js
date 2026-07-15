@@ -22,7 +22,6 @@ function waitForAuthUser() {
 async function initLeaderboardScreen() {
   console.log("🏆 หน้า Leaderboard ทำงานแล้ว");
 
-  // ไฮไลต์ปุ่มเมนูให้ถูกต้อง
   document
     .querySelectorAll(".nav-item")
     .forEach((btn) => btn.classList.remove("active"));
@@ -32,7 +31,6 @@ async function initLeaderboardScreen() {
 
   const listBox = document.getElementById("leaderboard-list-box");
 
-  // ✅ จุดที่แก้: รอ auth ให้พร้อมก่อน แทนที่จะอ่าน auth.currentUser ทันที
   const user = await waitForAuthUser();
   const uid = user?.uid || null;
 

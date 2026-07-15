@@ -1,3 +1,5 @@
+// ===== components/login/login.js =====
+
 import { auth } from "../../scripts/firebase.js";
 
 import {

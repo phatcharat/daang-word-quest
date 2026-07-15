@@ -37,7 +37,7 @@ function waitForAuthUser() {
   });
 }
 
-// 🌟 ฟังก์ชันพิเศษฉบับแก้ไข: แยกสีปุ่ม "คำต่อไป" ตอนตอบผิดให้เป็นสีแดงสด
+// แยกสีปุ่ม "คำต่อไป" ตอนตอบผิดให้เป็นสีแดงสด
 function injectQuizPopupStyles() {
   if (document.getElementById("spelling-quiz-popup-style-fix")) return;
 
