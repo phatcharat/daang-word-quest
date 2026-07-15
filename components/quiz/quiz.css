@@ -10,7 +10,9 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 12px;
-    margin-top: 8px;
+    width: calc(100% - 48px); 
+    max-width: 420px;         
+    margin: 8px auto 0 auto;  
 }
 
 .choice-btn {

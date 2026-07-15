@@ -37,7 +37,7 @@ window.quizManager = {
   async _loadShuffledWords() {
     if (this._cache) return this._cache;
 
-    const res = await fetch("/data/words.json");
+    const res = await fetch("../../data/words.json");
     const data = await res.json();
 
     // ตัดคำที่ข้อมูลไม่ครบทิ้ง (บางแถวใน words.json เป็นช่องว่างล้วน)

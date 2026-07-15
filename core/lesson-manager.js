@@ -2,7 +2,7 @@ window.lessonManager = {
   async getLessons(category) {
     // ใช้ path แบบ root-relative (ขึ้นต้นด้วย "/") เพื่อให้ทำงานถูกไม่ว่าจะเรียกจากหน้าไหน
     // (ถ้าใช้ path แบบ relative เช่น "data/words.json" เบราว์เซอร์จะอิงตามโฟลดเชอร์ของหน้าที่เรียกใช้งาน)
-    const res = await fetch("/data/words.json");
+    const res = await fetch("../../data/words.json");
     const data = await res.json();
 
     const words = data.words.filter((w) => w.category === category);

@@ -178,14 +178,6 @@
     },
     {
       "id": 23,
-      "thai": "ผ้าโพกหัว",
-      "daang": "กามัยะ",
-      "ipa": "ka-mayK",
-      "emoji": "-----------------",
-      "category": "items"
-    },
-    {
-      "id": 24,
       "thai": "ตา",
       "daang": "งาย",
       "ipa": "ngay",
@@ -193,7 +185,7 @@
       "category": "body"
     },
     {
-      "id": 25,
+      "id": 24,
       "thai": "เงิน",
       "daang": "รึอน",
       "ipa": "ruean",
@@ -201,7 +193,7 @@
       "category": "items"
     },
     {
-      "id": 26,
+      "id": 25,
       "thai": "เสือ",
       "daang": "มาดาวาย",
       "ipa": "ma-da-way",
@@ -209,7 +201,7 @@
       "category": "animal"
     },
     {
-      "id": 27,
+      "id": 26,
       "thai": "ถั่ว",
       "daang": "เบล โลม",
       "ipa": "bqle lom",
@@ -217,7 +209,7 @@
       "category": "fruit"
     },
     {
-      "id": 28,
+      "id": 27,
       "thai": "ร่ม",
       "daang": "โฌง",
       "ipa": "zong",
@@ -225,7 +217,7 @@
       "category": "items"
     },
     {
-      "id": 29,
+      "id": 28,
       "thai": "เข็ม",
       "daang": "มาลัต",
       "ipa": "ma-lAtK",
@@ -233,7 +225,7 @@
       "category": "items"
     },
     {
-      "id": 30,
+      "id": 29,
       "thai": "กระทะ",
       "daang": "มัง คาง",
       "ipa": "mAng-hkang",
@@ -241,7 +233,7 @@
       "category": "items"
     },
     {
-      "id": 31,
+      "id": 30,
       "thai": "ลิง",
       "daang": "มาฟา",
       "ipa": "ma-hwa",
@@ -249,7 +241,7 @@
       "category": "animal"
     },
     {
-      "id": 32,
+      "id": 31,
       "thai": "แมว",
       "daang": "มาอาแงว",
       "ipa": "ma-qa-ngeaw",
@@ -257,7 +249,7 @@
       "category": "animal"
     },
     {
-      "id": 33,
+      "id": 32,
       "thai": "หมี",
       "daang": "มาเฆรห",
       "ipa": "ma-grex",
@@ -265,7 +257,7 @@
       "category": "animal"
     },
     {
-      "id": 34,
+      "id": 33,
       "thai": "รองเท้า",
       "daang": "แคลบ",
       "ipa": "hkqleap",
@@ -273,7 +265,7 @@
       "category": "items"
     },
     {
-      "id": 35,
+      "id": 34,
       "thai": "ไหล่",
       "daang": "ยัะ",
       "ipa": "yAQ",
@@ -281,7 +273,7 @@
       "category": "body"
     },
     {
-      "id": 36,
+      "id": 35,
       "thai": "ไม้เท้า",
       "daang": "อึณกรวน",
       "ipa": "qinK-kruan",
@@ -289,7 +281,7 @@
       "category": "items"
     },
     {
-      "id": 37,
+      "id": 36,
       "thai": "กระด้ง",
       "daang": "มานา",
       "ipa": "ma-na",
@@ -297,7 +289,7 @@
       "category": "items"
     },
     {
-      "id": 38,
+      "id": 37,
       "thai": "ผลไม้",
       "daang": "เบล",
       "ipa": "bqle",
@@ -305,7 +297,7 @@
       "category": "fruit"
     },
     {
-      "id": 39,
+      "id": 38,
       "thai": "ฟักเขียว",
       "daang": "เบล ฆูงฆัห",
       "ipa": "bqle gung-gAx",
@@ -313,7 +305,7 @@
       "category": "fruit"
     },
     {
-      "id": 40,
+      "id": 39,
       "thai": "กระดุม",
       "daang": "เบล ซีโตว",
       "ipa": "bqle si-tow",
@@ -321,7 +313,7 @@
       "category": "items"
     },
     {
-      "id": 41,
+      "id": 40,
       "thai": "ย่าม",
       "daang": "กาบยาว",
       "ipa": "ka-byaw",
@@ -329,7 +321,7 @@
       "category": "items"
     },
     {
-      "id": 42,
+      "id": 41,
       "thai": "แก้วน้ำ",
       "daang": "ก็อก",
       "ipa": "koak",
@@ -337,7 +329,7 @@
       "category": "items"
     },
     {
-      "id": 43,
+      "id": 42,
       "thai": "ตะกร้าแบกฝืน",
       "daang": "กรึก",
       "ipa": "kruek",
@@ -345,7 +337,7 @@
       "category": "items"
     },
     {
-      "id": 44,
+      "id": 43,
       "thai": "กำไล",
       "daang": "กันแด",
       "ipa": "gAn dea",
@@ -353,7 +345,7 @@
       "category": "items"
     },
     {
-      "id": 45,
+      "id": 44,
       "thai": "เสื่อ",
       "daang": "อึณเบว",
       "ipa": "qimK-bew",
@@ -506,22 +498,6 @@
     },
     {
       "id": 63,
-      "thai": "ผ้าซิ่น",
-      "daang": "ฆลาง",
-      "ipa": "gqlang",
-      "emoji": "--",
-      "category": "items"
-    },
-    {
-      "id": 64,
-      "thai": "เสื้อดาราอางผู้หญิง",
-      "daang": "ซีโลบ",
-      "ipa": "si-lop",
-      "emoji": "--",
-      "category": "items"
-    },
-    {
-      "id": 65,
       "thai": "ด้าย",
       "daang": "เซณ",
       "ipa": "sen",
@@ -529,7 +505,7 @@
       "category": "items"
     },
     {
-      "id": 66,
+      "id": 64,
       "thai": "หัวหอม",
       "daang": "มาโปว",
       "ipa": "ma-pow",
@@ -537,7 +513,7 @@
       "category": "fruit"
     },
     {
-      "id": 67,
+      "id": 65,
       "thai": "หม้อนึ่ง",
       "daang": "อึณโฮ็ง",
       "ipa": "qinK-hongK",
@@ -545,7 +521,7 @@
       "category": "items"
     },
     {
-      "id": 68,
+      "id": 66,
       "thai": "เชือก",
       "daang": "วัน",
       "ipa": "wAn",
@@ -553,7 +529,7 @@
       "category": "items"
     },
     {
-      "id": 69,
+      "id": 67,
       "thai": "ปู",
       "daang": "มาดีเฆรียห",
       "ipa": "ma-di-griax",
@@ -561,15 +537,7 @@
       "category": "animal"
     },
     {
-      "id": 70,
-      "thai": "",
-      "daang": "",
-      "ipa": "",
-      "emoji": "",
-      "category": ""
-    },
-    {
-      "id": 71,
+      "id": 68,
       "thai": "ผ้าห่ม",
       "daang": "ฮึบ",
       "ipa": "huep",
@@ -577,7 +545,7 @@
       "category": "items"
     },
     {
-      "id": 72,
+      "id": 69,
       "thai": "วัว",
       "daang": "มัก",
       "ipa": "mAk",
@@ -585,7 +553,7 @@
       "category": "animal"
     },
     {
-      "id": 73,
+      "id": 70,
       "thai": "แมลงสาบ",
       "daang": "มาพยาบ",
       "ipa": "ma-hpyap",
@@ -593,7 +561,7 @@
       "category": "animal"
     },
     {
-      "id": 74,
+      "id": 71,
       "thai": "ผึ้ง",
       "daang": "มาเพียน",
       "ipa": "ma-hpian",
@@ -601,7 +569,7 @@
       "category": "animal"
     },
     {
-      "id": 75,
+      "id": 72,
       "thai": "ไก่",
       "daang": "เอียน",
       "ipa": "qian",
@@ -609,7 +577,7 @@
       "category": "animal"
     },
     {
-      "id": 76,
+      "id": 73,
       "thai": "แก้ม",
       "daang": "กาลา",
       "ipa": "ka-la",
@@ -617,31 +585,7 @@
       "category": "body"
     },
     {
-      "id": 77,
-      "thai": "",
-      "daang": "",
-      "ipa": "",
-      "emoji": "",
-      "category": ""
-    },
-    {
-      "id": 78,
-      "thai": "",
-      "daang": "",
-      "ipa": "",
-      "emoji": "",
-      "category": ""
-    },
-    {
-      "id": 79,
-      "thai": "",
-      "daang": "",
-      "ipa": "",
-      "emoji": "",
-      "category": ""
-    },
-    {
-      "id": 80,
+      "id": 74,
       "thai": "เมล็ดทานตะวัน",
       "daang": "เบล มังฌึอม",
       "ipa": "bqle mAng-zueam",
@@ -649,7 +593,7 @@
       "category": "fruit"
     },
     {
-      "id": 81,
+      "id": 75,
       "thai": "หมาก",
       "daang": "เบล มามู",
       "ipa": "bqle ma-mu",
@@ -657,7 +601,7 @@
       "category": "fruit"
     },
     {
-      "id": 82,
+      "id": 76,
       "thai": "นิ้วชี้",
       "daang": "กานู ปูต",
       "ipa": "ka-nu putk",
@@ -665,7 +609,7 @@
       "category": "body"
     },
     {
-      "id": 83,
+      "id": 77,
       "thai": "นิ้วกลาง",
       "daang": "กานู กาแต",
       "ipa": "ka-nu ka-tae",
@@ -673,7 +617,7 @@
       "category": "body"
     },
     {
-      "id": 84,
+      "id": 78,
       "thai": "นิ้วนาง",
       "daang": "กานู ดาม",
       "ipa": "ka-nu dam",
@@ -681,7 +625,7 @@
       "category": "body"
     },
     {
-      "id": 85,
+      "id": 79,
       "thai": "เตียง",
       "daang": "กาโช็ง อีด",
       "ipa": "ka-hcoangk-qit",
@@ -689,7 +633,7 @@
       "category": "items"
     },
     {
-      "id": 86,
+      "id": 80,
       "thai": "เอว",
       "daang": "ณอย",
       "ipa": "nyoay",
@@ -697,7 +641,7 @@
       "category": "body"
     },
     {
-      "id": 87,
+      "id": 81,
       "thai": "จมูก",
       "daang": "ฆู มูห",
       "ipa": "",
@@ -705,7 +649,7 @@
       "category": "body"
     },
     {
-      "id": 88,
+      "id": 82,
       "thai": "พริก",
       "daang": "พรีต",
       "ipa": "hpruet",
@@ -713,7 +657,7 @@
       "category": "fruit"
     },
     {
-      "id": 89,
+      "id": 83,
       "thai": "ผักชี",
       "daang": "พูฆี",
       "ipa": "hpu-gi",
@@ -721,7 +665,7 @@
       "category": "fruit"
     },
     {
-      "id": 90,
+      "id": 84,
       "thai": "กุ้ง",
       "daang": "มาโฆต",
       "ipa": "ma-gotK",
@@ -729,7 +673,7 @@
       "category": "animal"
     },
     {
-      "id": 91,
+      "id": 85,
       "thai": "ตะไคร้",
       "daang": "กาโฮม",
       "ipa": "ka-hom",
@@ -737,7 +681,7 @@
       "category": "fruit"
     },
     {
-      "id": 92,
+      "id": 86,
       "thai": "แตงกวา",
       "daang": "ดีเฆีย",
       "ipa": "di-gyi",
@@ -745,7 +689,7 @@
       "category": "fruit"
     },
     {
-      "id": 93,
+      "id": 87,
       "thai": "มันฝรั่ง",
       "daang": "ตูแค",
       "ipa": "tu-hkae",
@@ -753,7 +697,7 @@
       "category": "fruit"
     },
     {
-      "id": 94,
+      "id": 88,
       "thai": "หนังสือ",
       "daang": "บับ",
       "ipa": "bAp",
@@ -761,7 +705,7 @@
       "category": "items"
     },
     {
-      "id": 95,
+      "id": 89,
       "thai": "แหวน",
       "daang": "ซีกานู",
       "ipa": "si-ka-nu",
@@ -769,7 +713,7 @@
       "category": "items"
     },
     {
-      "id": 96,
+      "id": 90,
       "thai": "ปาก",
       "daang": "โมต",
       "ipa": "motK",
@@ -777,7 +721,7 @@
       "category": "body"
     },
     {
-      "id": 97,
+      "id": 91,
       "thai": "หนู",
       "daang": "มาหนาย",
       "ipa": "ma-hnay",
@@ -785,7 +729,7 @@
       "category": "animal"
     },
     {
-      "id": 98,
+      "id": 92,
       "thai": "ตัวกินมด",
       "daang": "มากาปึร",
       "ipa": "ma-ka-puer",
@@ -793,7 +737,7 @@
       "category": "animal"
     },
     {
-      "id": 99,
+      "id": 93,
       "thai": "นาก",
       "daang": "มาปูน",
       "ipa": "ma-pun",
@@ -801,7 +745,7 @@
       "category": "animal"
     },
     {
-      "id": 100,
+      "id": 94,
       "thai": "จระเข้",
       "daang": "มา งืก",
       "ipa": "ma-ngiik",
@@ -809,7 +753,7 @@
       "category": "animal"
     },
     {
-      "id": 101,
+      "id": 95,
       "thai": "แมลงเม่า",
       "daang": "มากลัห",
       "ipa": "ma-klAx",
@@ -817,7 +761,7 @@
       "category": "animal"
     },
     {
-      "id": 102,
+      "id": 96,
       "thai": "หน้าผาก",
       "daang": "กาต็อห",
       "ipa": "ka-tAwx",
@@ -825,7 +769,7 @@
       "category": "body"
     },
     {
-      "id": 103,
+      "id": 97,
       "thai": "กระรอกบิน",
       "daang": "มากาโวว",
       "ipa": "ma-ka-wow",
@@ -833,7 +777,7 @@
       "category": "animal"
     },
     {
-      "id": 104,
+      "id": 98,
       "thai": "สาก",
       "daang": "อึณเกร",
       "ipa": "queunkre",
@@ -841,7 +785,7 @@
       "category": "items"
     },
     {
-      "id": 105,
+      "id": 99,
       "thai": "ครก",
       "daang": "อึณบอ",
       "ipa": "queyn-bao",
@@ -849,7 +793,7 @@
       "category": "items"
     },
     {
-      "id": 106,
+      "id": 100,
       "thai": "ชาม",
       "daang": "ซีลาต ฮาบ",
       "ipa": "silayt",
@@ -857,7 +801,7 @@
       "category": "items"
     },
     {
-      "id": 107,
+      "id": 101,
       "thai": "ข้าวโพด",
       "daang": "อาหรึก",
       "ipa": "qahrueK",
@@ -865,7 +809,7 @@
       "category": "fruit"
     },
     {
-      "id": 108,
+      "id": 102,
       "thai": "แก้วมังกร",
       "daang": "เบล มากราย",
       "ipa": "ble ma-kray",
@@ -873,7 +817,7 @@
       "category": "fruit"
     },
     {
-      "id": 109,
+      "id": 103,
       "thai": "ส้ม",
       "daang": "เบล มาฌ็อก",
       "ipa": "ble ma-zaokK",
@@ -881,7 +825,7 @@
       "category": "fruit"
     },
     {
-      "id": 110,
+      "id": 104,
       "thai": "แมงมุม",
       "daang": "มาปูงเปยณ",
       "ipa": "ma-pung-pyeyn",
